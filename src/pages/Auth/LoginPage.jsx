@@ -1,0 +1,305 @@
+import { useState } from "react";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import * as z from "zod";
+import { Link, useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
+import toast from "react-hot-toast";
+import {
+  MdEmail,
+  MdLock,
+  MdVisibility,
+  MdVisibilityOff,
+  MdLogin,
+  MdSecurity,
+} from "react-icons/md";
+import { FaGoogle, FaApple, FaFacebookF } from "react-icons/fa";
+
+import PageWrapper from "../../shared/components/layout/PageWrapper";
+import SEO from "../../shared/components/layout/SEO";
+import Button from "../../shared/components/ui/Button";
+import { ROUTES } from "../../shared/constants/routes";
+import { useAuth } from "../../contexts/AuthContext";
+
+// صورة التوضيح (تأكد من المسار)
+import loginIllustration from "../../assets/auth/login-illustration.png";
+
+// ================= Schema Validation =================
+const loginSchema = z.object({
+  email: z
+    .string()
+    .min(1, { message: "البريد الإلكتروني مطلوب" })
+    .email({ message: "يرجى إدخال بريد إلكتروني صحيح" }),
+  password: z
+    .string()
+    .min(6, { message: "كلمة المرور يجب أن تكون 6 محارف على الأقل" }),
+});
+
+export default function LoginPage() {
+  const navigate = useNavigate();
+  const { login } = useAuth();
+  const [showPassword, setShowPassword] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+
+  // إعداد النموذج
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    resolver: zodResolver(loginSchema),
+    defaultValues: {
+      email: "",
+      password: "",
+    },
+  });
+
+  // معالجة الإرسال
+  const onSubmit = async (data) => {
+    setIsLoading(true);
+    // محاكاة طلب الشبكة
+    setTimeout(() => {
+      // تسجيل الدخول باستخدام AuthContext
+      login({ email: data.email });
+      setIsLoading(false);
+      toast.success("تم تسجيل الدخول بنجاح");
+      navigate(ROUTES.HOME); // توجيه للرئيسية بعد النجاح
+    }, 1500);
+  };
+
+  return (
+    <PageWrapper>
+      <SEO title="تسجيل الدخول" description="سجل الدخول إلى حسابك في بوابة الجامعات" />
+
+      {/* ================= Header Banner ================= */}
+      <div className="relative bg-gradient-to-r from-[#4a0f18] via-[#6B1F2A] to-[#4a0f18] py-8 md:py-12 text-center text-white overflow-hidden">
+        {/* Animated background elements */}
+        <div className="absolute top-0 left-0 w-64 h-64 bg-white/10 rounded-full blur-3xl animate-blob"></div>
+        <div className="absolute bottom-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl animate-blob animation-delay-2000"></div>
+
+        <div className="relative z-10 flex items-center justify-center gap-3">
+          <motion.div
+            initial={{ scale: 0, rotate: -180 }}
+            animate={{ scale: 1, rotate: 0 }}
+            transition={{ duration: 0.6, type: "spring" }}
+          >
+            <MdLogin className="text-4xl md:text-5xl" />
+          </motion.div>
+          <h1 className="text-3xl md:text-4xl font-bold">تسجيل الدخول</h1>
+        </div>
+      </div>
+
+      <div className="min-h-[calc(100vh-200px)] flex items-center justify-center py-12 px-4 bg-gradient-to-br from-slate-50 via-white to-emerald-50/30 relative overflow-hidden" dir="rtl">
+        {/* Animated background decorations */}
+        <div className="absolute top-20 right-10 w-72 h-72 bg-emerald-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
+        <div className="absolute top-40 left-10 w-72 h-72 bg-rose-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+        <div className="absolute -bottom-10 left-1/3 w-72 h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
+
+        <div className="w-full max-w-6xl grid md:grid-cols-2 gap-12 items-center relative z-10">
+
+          {/* ================= Left Side: Illustration ================= */}
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            className="hidden md:flex justify-center relative"
+          >
+            <motion.div
+              animate={{ y: [0, -10, 0] }}
+              transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+            >
+              <img
+                src={loginIllustration}
+                alt="Login Illustration"
+                className="max-w-md w-full object-contain drop-shadow-2xl"
+              />
+            </motion.div>
+            {/* Decorative icons */}
+            <motion.div
+              animate={{ rotate: 360 }}
+              transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+              className="absolute top-10 right-10 text-emerald-500/20"
+            >
+              <MdSecurity className="text-6xl" />
+            </motion.div>
+          </motion.div>
+
+          {/* ================= Right Side: Form ================= */}
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="w-full max-w-md mx-auto"
+          >
+            <div className="bg-white rounded-3xl shadow-2xl p-8 md:p-10 border border-slate-100">
+              <div className="text-right space-y-3 mb-8">
+                <div className="flex items-center justify-end gap-3">
+                  <div>
+                    <h2 className="text-3xl font-bold text-slate-900">تسجيل الدخول</h2>
+                    <p className="text-gray-500 text-sm mt-1">
+                      قم بتسجيل الدخول للوصول إلى حسابك الشخصي
+                    </p>
+                  </div>
+                  <motion.div
+                    whileHover={{ scale: 1.1, rotate: 5 }}
+                    className="w-12 h-12 rounded-full bg-gradient-to-br from-emerald-500 to-emerald-600 flex items-center justify-center shadow-lg"
+                  >
+                    <MdLogin className="text-2xl text-white" />
+                  </motion.div>
+                </div>
+              </div>
+
+              <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+                {/* Email Field */}
+                <div className="space-y-2">
+                  <label className="text-sm font-semibold text-gray-700 block flex items-center gap-2">
+                    <MdEmail className="text-emerald-600" />
+                    البريد الإلكتروني:
+                  </label>
+                  <div className="relative">
+                    <input
+                      type="email"
+                      {...register("email")}
+                      className={`
+                        w-full rounded-xl border bg-white px-4 py-3.5 text-sm outline-none transition-all
+                        ${errors.email ? "border-red-500 focus:border-red-500" : "border-gray-200 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20"}
+                      `}
+                      placeholder="example@domain.com"
+                    />
+                    {errors.email && (
+                      <motion.p
+                        initial={{ opacity: 0, y: -10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        className="text-xs text-red-500 mt-1 flex items-center gap-1"
+                      >
+                        {errors.email.message}
+                      </motion.p>
+                    )}
+                  </div>
+                </div>
+
+                {/* Password Field */}
+                <div className="space-y-2">
+                  <label className="text-sm font-semibold text-gray-700 block flex items-center gap-2">
+                    <MdLock className="text-emerald-600" />
+                    كلمة المرور:
+                  </label>
+                  <div className="relative">
+                    <input
+                      type={showPassword ? "text" : "password"}
+                      {...register("password")}
+                      className={`
+                        w-full rounded-xl border bg-white px-4 py-3.5 text-sm outline-none transition-all
+                        ${errors.password ? "border-red-500 focus:border-red-500" : "border-gray-200 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20"}
+                      `}
+                      placeholder="••••••••"
+                    />
+                    <motion.button
+                      whileHover={{ scale: 1.1 }}
+                      whileTap={{ scale: 0.9 }}
+                      type="button"
+                      onClick={() => setShowPassword(!showPassword)}
+                      className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-emerald-600 transition"
+                    >
+                      {showPassword ? <MdVisibilityOff size={20} /> : <MdVisibility size={20} />}
+                    </motion.button>
+                    {errors.password && (
+                      <motion.p
+                        initial={{ opacity: 0, y: -10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        className="text-xs text-red-500 mt-1"
+                      >
+                        {errors.password.message}
+                      </motion.p>
+                    )}
+                  </div>
+                </div>
+
+                {/* Forgot Password Link */}
+                <div className="flex justify-end">
+                  <Link
+                    to={ROUTES.FORGOT_PASSWORD || "#"}
+                    className="text-xs text-red-500 hover:text-red-600 hover:underline font-medium transition"
+                  >
+                    نسيت كلمة المرور؟
+                  </Link>
+                </div>
+
+                {/* Submit Button */}
+                <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+                  <Button
+                    type="submit"
+                    disabled={isLoading}
+                    className="w-full bg-gradient-to-r from-emerald-600 to-emerald-700 hover:from-emerald-700 hover:to-emerald-800 text-white py-3.5 rounded-xl text-base font-bold shadow-lg shadow-emerald-500/30 hover:shadow-xl hover:shadow-emerald-500/40 transition-all"
+                  >
+                    {isLoading ? (
+                      <span className="flex items-center justify-center gap-2">
+                        جاري التحقق...
+                        <motion.div
+                          animate={{ rotate: 360 }}
+                          transition={{ repeat: Infinity, duration: 1 }}
+                          className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full"
+                        />
+                      </span>
+                    ) : (
+                      <span className="flex items-center justify-center gap-2">
+                        <MdLogin className="text-xl" />
+                        تسجيل الدخول
+                      </span>
+                    )}
+                  </Button>
+                </motion.div>
+
+                {/* Sign Up Prompt */}
+                <div className="text-center text-sm text-gray-600">
+                  ليس لديك حساب؟{" "}
+                  <Link to={ROUTES.REGISTER || "#"} className="text-emerald-600 font-bold hover:text-emerald-700 hover:underline transition">
+                    إنشاء حساب
+                  </Link>
+                </div>
+
+                {/* Divider */}
+                <div className="relative flex items-center justify-center my-6">
+                  <div className="absolute inset-0 flex items-center">
+                    <div className="w-full border-t border-gray-200"></div>
+                  </div>
+                  <div className="relative bg-white px-4 text-xs text-gray-500 font-medium">
+                    تسجيل دخول باستخدام
+                  </div>
+                </div>
+
+                {/* Social Login Buttons */}
+                <div className="grid grid-cols-3 gap-4">
+                  <motion.button
+                    whileHover={{ scale: 1.05, y: -2 }}
+                    whileTap={{ scale: 0.95 }}
+                    type="button"
+                    className="flex items-center justify-center p-3 border-2 border-gray-200 rounded-xl hover:bg-blue-50 hover:border-blue-500 transition-all group"
+                  >
+                    <FaFacebookF size={20} className="text-gray-600 group-hover:text-blue-600 transition" />
+                  </motion.button>
+                  <motion.button
+                    whileHover={{ scale: 1.05, y: -2 }}
+                    whileTap={{ scale: 0.95 }}
+                    type="button"
+                    className="flex items-center justify-center p-3 border-2 border-gray-200 rounded-xl hover:bg-red-50 hover:border-red-500 transition-all group"
+                  >
+                    <FaGoogle size={20} className="text-gray-600 group-hover:text-red-500 transition" />
+                  </motion.button>
+                  <motion.button
+                    whileHover={{ scale: 1.05, y: -2 }}
+                    whileTap={{ scale: 0.95 }}
+                    type="button"
+                    className="flex items-center justify-center p-3 border-2 border-gray-200 rounded-xl hover:bg-gray-100 hover:border-black transition-all group"
+                  >
+                    <FaApple size={22} className="text-gray-600 group-hover:text-black transition" />
+                  </motion.button>
+                </div>
+              </form>
+            </div>
+          </motion.div>
+        </div>
+      </div>
+    </PageWrapper>
+  );
+}

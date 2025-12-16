@@ -1,0 +1,17 @@
+export const ROUTES = {
+  HOME: "/",
+  UNIVERSITIES: "/universities",
+  COLLEGE: "/college",
+  DEPARTMENTS: "/departments",
+  SPECIALTIES: "/specialties",
+  NOTIFICATIONS: "/notifications",
+  PROFILE: "/profile",
+  LOGIN: "/auth/login",
+  REGISTER: "/auth/register",
+  CONFIRM_CODE: "/auth/confirm-code",
+  FORGOT_PASSWORD: "/auth/forgot-password",
+  NEW_PASSWORD: "/auth/new-password",
+  GRANTS: "/grants",
+  DEVELOPERS: "/developers",
+  GRANT_DETAILS: "/grants/:id",
+};
