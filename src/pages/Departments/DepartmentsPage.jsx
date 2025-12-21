@@ -12,7 +12,7 @@ export default function DepartmentsPage() {
         description="الهيكل التنظيمي للأقسام والكليات في الجامعات السورية."
       />
       <div className="bg-[#004733] py-16 text-center text-white relative overflow-hidden" dir="rtl">
-        {/* Background pattern */}
+ 
         <div className="absolute inset-0 opacity-10"
           style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '30px 30px' }}>
         </div>

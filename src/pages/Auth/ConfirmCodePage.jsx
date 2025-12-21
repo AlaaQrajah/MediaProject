@@ -21,11 +21,7 @@ export default function ConfirmCodePage() {
   const navigate = useNavigate();
   const location = useLocation();
   const [isLoading, setIsLoading] = useState(false);
-  // Optional: Eye toggle for OTP if it's treated like a password field, though visually in design it looks like text.
-  // The design shows an eye icon inside the input, so implies it might be obscured or user wants to see it? 
-  // Standard OTP is usually visible numbers. But I will add toggle as per design hint if any.
-  // Looking at user provided screenshot for Confirm Code (if any), text says "تاكيد الرمز".
-  // Standard implementation:
+ 
 
   const {
     register,
@@ -48,7 +44,7 @@ export default function ConfirmCodePage() {
     <PageWrapper>
       <SEO title="تأكيد الرمز" description="أدخل رمز التحقق المرسل إليك" />
 
-      {/* Header Banner */}
+  
       <div className="bg-[#4a0f18] py-8 md:py-12 text-center text-white">
         <h1 className="text-3xl md:text-4xl font-bold">تأكيد الرمز</h1>
       </div>
@@ -56,7 +52,6 @@ export default function ConfirmCodePage() {
       <div className="min-h-[calc(100vh-200px)] flex items-center justify-center py-12 px-4 bg-white" dir="rtl">
         <div className="w-full max-w-6xl grid md:grid-cols-2 gap-12 items-center">
 
-          {/* Illustration */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
@@ -70,7 +65,7 @@ export default function ConfirmCodePage() {
             />
           </motion.div>
 
-          {/* Form */}
+ 
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}

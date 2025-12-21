@@ -52,7 +52,7 @@ export default function UniversitiesSection() {
   return (
     <SectionWrapper className="relative">
       <div className="relative space-y-10">
-        {/* ======================= الزخارف ======================= */}
+     
         <img
           src={decoArrows}
           alt=""
@@ -71,7 +71,7 @@ export default function UniversitiesSection() {
           className="hidden md:block absolute bottom-10 -left-16 w-10 opacity-90 pointer-events-none select-none"
         />
 
-        {/* ======================= العنوان ======================= */}
+      
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="text-center md:text-right space-y-2">
             <SectionHeader
@@ -81,8 +81,7 @@ export default function UniversitiesSection() {
               className="mb-0 md:mb-0"
             />
           </div>
-
-          {/* أزرار التنقل + زر كل الجامعات */}
+ 
           <div className="flex items-center gap-3">
             <div className="flex items-center gap-2 bg-slate-50 p-1 rounded-full border border-slate-200">
               <button
@@ -110,7 +109,7 @@ export default function UniversitiesSection() {
           </div>
         </div>
 
-        {/* ======================= السلايدر ======================= */}
+    
         <div className="relative min-h-[400px]">
           <AnimatePresence mode="wait">
             <motion.div
@@ -128,7 +127,7 @@ export default function UniversitiesSection() {
                   transition={{ type: "spring", stiffness: 300 }}
                   className="group flex flex-col bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl hover:shadow-[#004733]/10 border border-gray-100 transition-all duration-300"
                 >
-                  {/* الصورة */}
+                   
                   <div className="relative h-52 overflow-hidden">
                     <img
                       src={uni.image}
@@ -148,8 +147,7 @@ export default function UniversitiesSection() {
                       </p>
                     </div>
                   </div>
-
-                  {/* المحتوى */}
+ 
                   <div className="p-5 flex-1 flex flex-col gap-4">
                     <div className="grid grid-cols-2 gap-4">
                       <div className="bg-slate-50 p-2 rounded-xl text-center">
@@ -177,8 +175,7 @@ export default function UniversitiesSection() {
           </AnimatePresence>
         </div>
 
-        {/* ======================= النقاط ======================= */}
-        <div className="flex justify-center gap-2 mt-8">
+         <div className="flex justify-center gap-2 mt-8">
           {Array.from({ length: pageCount }).map((_, i) => (
             <button
               key={i}

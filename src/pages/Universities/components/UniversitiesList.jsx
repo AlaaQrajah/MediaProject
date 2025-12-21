@@ -7,7 +7,7 @@ import UniversityCardSkeleton from "../../../shared/components/skeletons/Univers
 import Button from "../../../shared/components/ui/Button";
 import { ROUTES } from "../../../shared/constants/routes";
 
-// Filter Categories matching the screenshot
+ 
 const FILTERS = [
     { id: "all", label: "الكل" },
     { id: "public", label: "الحكومية" },
@@ -25,8 +25,7 @@ const UniversityCard = ({ uni, index }) => {
             transition={{ type: "spring", stiffness: 300, damping: 30 }}
             className="group relative bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300"
         >
-            {/* Logo Section */}
-            <div className="flex flex-col items-center pt-8 pb-4 px-4 bg-gradient-to-b from-gray-50 to-white rounded-t-2xl">
+             <div className="flex flex-col items-center pt-8 pb-4 px-4 bg-gradient-to-b from-gray-50 to-white rounded-t-2xl">
                 <div className="w-24 h-24 mb-4 rounded-full bg-white shadow-md flex items-center justify-center p-2 border border-gray-100 group-hover:scale-110 transition-transform duration-300">
                     <img
                         src={uni.logo || uni.image}
@@ -38,11 +37,9 @@ const UniversityCard = ({ uni, index }) => {
                 <p className="text-xs text-gray-500 mt-1">{uni.subtitle || "الجمهورية العربية السورية"}</p>
             </div>
 
-            {/* Divider */}
-            <div className="w-full h-px bg-gray-100 my-2"></div>
+             <div className="w-full h-px bg-gray-100 my-2"></div>
 
-            {/* Details Section */}
-            <div className="p-4 grid grid-cols-2 gap-4 text-sm text-gray-600">
+             <div className="p-4 grid grid-cols-2 gap-4 text-sm text-gray-600">
                 <div className="flex flex-col items-center gap-1">
                     <span className="text-xs text-gray-400">التأسيس</span>
                     <span className="font-semibold text-slate-800 flex items-center gap-1">
@@ -57,8 +54,7 @@ const UniversityCard = ({ uni, index }) => {
                 </div>
             </div>
 
-            {/* Action Button */}
-            <div className="p-4 pt-0">
+             <div className="p-4 pt-0">
                 <Link
                     to={`${ROUTES.UNIVERSITIES}/${uni.id}`}
                     className="mt-6 w-full py-3 rounded-xl bg-[#004733] text-white font-bold hover:bg-[#003828] transition-colors shadow-md hover:shadow-lg flex items-center justify-center gap-2 group"
@@ -74,15 +70,13 @@ const UniversityCard = ({ uni, index }) => {
 function UniversitiesList({ universities, isLoading, error, searchQuery, onSearchChange }) {
     const [activeFilter, setActiveFilter] = useState("all");
 
-    // Filter Logic
-    const filteredUniversities = useMemo(() => {
+     const filteredUniversities = useMemo(() => {
         let result = universities;
-        // 1. Category Filter
+      
         if (activeFilter !== "all") {
             result = result.filter(u => u.type === activeFilter);
         }
-        // 2. Search Query (handled by parent usually, but ensuring local consistency)
-        if (searchQuery) {
+         if (searchQuery) {
             result = result.filter(u => u.name.includes(searchQuery));
         }
         return result;
@@ -100,19 +94,16 @@ function UniversitiesList({ universities, isLoading, error, searchQuery, onSearc
 
     return (
         <PageWrapper>
-            {/* Header */}
+          
             <div className="bg-[#4a0f18] py-10 md:py-16 text-center text-white mb-8 relative">
                 <h1 className="text-4xl font-bold mb-2">الجامعات</h1>
-                {/* Custom Breadcrumb-ish or decorative line */}
-            </div>
+             </div>
 
             <section className="mx-auto max-w-7xl px-4 pb-12" dir="rtl">
 
-                {/* Search & Filters */}
-                <div className="flex flex-col md:flex-row items-center justify-between gap-6 mb-10 -mt-16 relative z-10 bg-white p-4 rounded-2xl shadow-xl border border-gray-100">
+                 <div className="flex flex-col md:flex-row items-center justify-between gap-6 mb-10 -mt-16 relative z-10 bg-white p-4 rounded-2xl shadow-xl border border-gray-100">
 
-                    {/* Search */}
-                    <div className="w-full md:w-1/3 relative">
+                     <div className="w-full md:w-1/3 relative">
                         <MdSearch className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 text-xl" />
                         <input
                             type="text"
@@ -123,8 +114,7 @@ function UniversitiesList({ universities, isLoading, error, searchQuery, onSearc
                         />
                     </div>
 
-                    {/* Filter Tabs */}
-                    <div className="flex gap-2 overflow-x-auto pb-2 md:pb-0 w-full md:w-auto">
+                     <div className="flex gap-2 overflow-x-auto pb-2 md:pb-0 w-full md:w-auto">
                         {FILTERS.map((filter) => (
                             <button
                                 key={filter.id}
@@ -139,8 +129,7 @@ function UniversitiesList({ universities, isLoading, error, searchQuery, onSearc
                         ))}
                     </div>
                 </div>
-
-                {/* Grid */}
+ 
                 {isLoading ? (
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                         {[1, 2, 3, 4].map((i) => <UniversityCardSkeleton key={i} />)}

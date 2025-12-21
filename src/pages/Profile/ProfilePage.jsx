@@ -20,7 +20,7 @@ import SEO from "../../shared/components/layout/SEO";
 import Avatar from "../../shared/components/ui/Avatar";
 import Button from "../../shared/components/ui/Button";
 
-// Mock User Data
+ 
 const MOCK_USER = {
   firstName: "عبد الرزاق",
   lastName: "الأحمد",
@@ -37,7 +37,7 @@ const MOCK_USER = {
   image: "https://i.pravatar.cc/300?img=11",
 };
 
-// Validation Schema
+ 
 const profileSchema = z.object({
   firstName: z.string().min(2, "الاسم الأول مطلوب"),
   lastName: z.string().min(2, "الاسم الأخير مطلوب"),
@@ -80,18 +80,15 @@ export default function ProfilePage() {
     <PageWrapper>
       <SEO title="الملف الشخصي" description="إدارة بياناتك الشخصية والدراسية" />
 
-      {/* Top Banner (Similar to Notifications) */}
-      <div className="bg-[#c5a365] h-32 md:h-48 w-full relative">
+       <div className="bg-[#c5a365] h-32 md:h-48 w-full relative">
         <div className="absolute inset-0 bg-black/10"></div>
       </div>
 
       <div className="max-w-5xl mx-auto px-4 -mt-16 md:-mt-24 relative z-10 pb-20" dir="rtl">
 
-        {/* Profile Card */}
-        <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-6 md:p-8 flex flex-col md:flex-row items-center md:items-start gap-6">
+         <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-6 md:p-8 flex flex-col md:flex-row items-center md:items-start gap-6">
 
-          {/* Avatar Section */}
-          <div className="flex-shrink-0">
+           <div className="flex-shrink-0">
             <Avatar
               src={user.image}
               size="xl"
@@ -100,16 +97,14 @@ export default function ProfilePage() {
             />
           </div>
 
-          {/* Header Info */}
-          <div className="flex-1 text-center md:text-right space-y-2 w-full">
+           <div className="flex-1 text-center md:text-right space-y-2 w-full">
             <div className="flex flex-col md:flex-row justify-between items-center gap-4">
               <div>
                 <h1 className="text-3xl font-bold text-slate-800">{user.firstName} {user.lastName}</h1>
                 <p className="text-gray-500 font-medium ltr">{user.email}</p>
               </div>
 
-              {/* Action Button */}
-              {!isEditing ? (
+               {!isEditing ? (
                 <Button
                   onClick={() => setIsEditing(true)}
                   className="bg-[#004733] text-white px-6 py-2 rounded-full flex items-center gap-2 hover:bg-[#003828] transition-all"
@@ -135,8 +130,7 @@ export default function ProfilePage() {
               )}
             </div>
 
-            {/* Badges */}
-            <div className="flex flex-wrap justify-center md:justify-start gap-2 pt-2">
+             <div className="flex flex-wrap justify-center md:justify-start gap-2 pt-2">
               <span className="bg-emerald-50 text-emerald-700 px-3 py-1 rounded-full text-sm font-semibold border border-emerald-100">
                 {user.role}
               </span>
@@ -147,11 +141,9 @@ export default function ProfilePage() {
           </div>
         </div>
 
-        {/* Info Grid */}
-        <form onSubmit={handleSubmit(onSubmit)} className="mt-8 grid md:grid-cols-2 gap-8">
+         <form onSubmit={handleSubmit(onSubmit)} className="mt-8 grid md:grid-cols-2 gap-8">
 
-          {/* Personal Info */}
-          <motion.div
+           <motion.div
             layout
             className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 space-y-6"
           >
@@ -211,7 +203,7 @@ export default function ProfilePage() {
             </div>
           </motion.div>
 
-          {/* Contact & Academic Info */}
+     
           <motion.div
             layout
             className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 space-y-6"
@@ -230,7 +222,7 @@ export default function ProfilePage() {
                 isEditing={isEditing}
                 error={errors.email}
                 icon={<MdEmail />}
-                disabled={true} // Email usually distinct
+                disabled={true}  
               />
               <EditableField
                 label="رقم الهاتف"
@@ -277,8 +269,7 @@ export default function ProfilePage() {
     </PageWrapper>
   );
 }
-
-// Reusable Field Component
+ 
 function EditableField({ label, name, register, isEditing, error, type = "text", icon, disabled = false }) {
   return (
     <div className="space-y-1">
@@ -300,14 +291,7 @@ function EditableField({ label, name, register, isEditing, error, type = "text",
         </>
       ) : (
         <div className="p-3 bg-gray-50 rounded-lg text-gray-800 font-medium border border-transparent">
-          {/* Access value from RHF watch or user prop? simpler to just pass props or use form value if wrapped context */}
-          {/* For simplicity in this component, we won't strictly bind 'value' here visually without watch, 
-                        but effectively when not editing, the input is hidden. 
-                        To show value, we need the value.
-                        Since we are using RHF, we can just use a disabled input for "view mode" to keep it simple 
-                        OR accept a 'value' prop.
-                        Let's use a disabled input approach for visual consistency but styled as flat text.
-                    */}
+           
           <input
             disabled
             {...register(name)}

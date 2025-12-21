@@ -32,25 +32,23 @@ const features = [
   },
 ];
 
-// Assuming the featured grant ID is 1 (Damascus University Grant)
+ 
 const FEATURED_GRANT_ID = 1;
 
 export default function ScholarshipHighlightSection() {
   return (
     <SectionWrapper bgColor="bg-[#f7faf9]" className="py-14 md:py-20 overflow-hidden">
       <div className="">
-        {/* حاوية رئيسية: صورة + محتوى */}
+    
         <div className="grid gap-12 md:grid-cols-2 md:items-center">
-          {/* ====================== صورة الجامعة مع الديكور ====================== */}
-          <motion.div
+           <motion.div
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.4 }}
             transition={{ duration: 0.6 }}
             className="relative flex justify-center md:justify-start"
           >
-            {/* مربع بيج كبير خلف الصورة */}
-            <motion.div
+             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true, amount: 0.4 }}
@@ -58,8 +56,7 @@ export default function ScholarshipHighlightSection() {
               className="absolute -top-10 -left-10 w-[340px] h-[340px] bg-[#b89c6d] rounded-sm opacity-90"
             />
 
-            {/* صورة النقاط dot.svg */}
-            <motion.img
+             <motion.img
               src={dots}
               alt=""
               aria-hidden="true"
@@ -69,8 +66,7 @@ export default function ScholarshipHighlightSection() {
               transition={{ duration: 0.6, delay: 0.3 }}
             />
 
-            {/* كرت الصورة الأساسية */}
-            <motion.div
+             <motion.div
               whileHover={{ y: -10 }}
               transition={{ type: "spring", stiffness: 300 }}
               className="relative z-10 rounded-2xl overflow-hidden shadow-2xl shadow-slate-900/20 bg-white"
@@ -85,12 +81,10 @@ export default function ScholarshipHighlightSection() {
               </div>
             </motion.div>
 
-            {/* شريط صغير في الأسفل لمحاكاة التصميم */}
-            <div className="absolute -bottom-6 left-16 right-16 h-4 rounded-full bg-[#b89c6d]/50 blur-sm" />
+             <div className="absolute -bottom-6 left-16 right-16 h-4 rounded-full bg-[#b89c6d]/50 blur-sm" />
           </motion.div>
 
-          {/* ====================== المحتوى النصي + الكروت ====================== */}
-          <motion.div
+           <motion.div
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.4 }}
@@ -98,8 +92,7 @@ export default function ScholarshipHighlightSection() {
             className="space-y-8 text-right"
           >
             <div className="space-y-4">
-              {/* البادجات */}
-              <div className="flex justify-end gap-2 text-[11px] md:text-sm">
+               <div className="flex justify-end gap-2 text-[11px] md:text-sm">
                 <span className="rounded-full bg-emerald-100 px-4 py-1.5 text-emerald-800 font-bold border border-emerald-200">
                   ممولة بالكامل
                 </span>
@@ -108,8 +101,7 @@ export default function ScholarshipHighlightSection() {
                 </span>
               </div>
 
-              {/* العنوان */}
-              <SectionHeader
+               <SectionHeader
                 align="right"
                 title={
                   <div className="leading-tight">
@@ -127,8 +119,7 @@ export default function ScholarshipHighlightSection() {
               />
             </div>
 
-            {/* كروت المزايا */}
-            <div className="grid gap-4 md:grid-cols-2">
+             <div className="grid gap-4 md:grid-cols-2">
               {features.map((item, index) => (
                 <motion.div
                   key={item.id}
@@ -154,8 +145,7 @@ export default function ScholarshipHighlightSection() {
               ))}
             </div>
 
-            {/* زر اتخاذ الإجراء */}
-            <div className="flex justify-end pt-2">
+             <div className="flex justify-end pt-2">
               <Link to={`${ROUTES.GRANTS}/${FEATURED_GRANT_ID}`}>
                 <Button className="bg-[#004733] hover:bg-[#003723] text-white px-8 py-3 rounded-xl shadow-lg shadow-emerald-900/20 flex items-center gap-2 group">
                   <span>عرض تفاصيل المنحة</span>

@@ -1,4 +1,3 @@
-// src/components/backgrounds/GradientBackground.tsx
 import React, { useEffect, useRef } from "react";
 
 type Props = {
@@ -83,7 +82,7 @@ const GradientBackground: React.FC<Props> = ({
         }
       });
 
-      // draw radial gradients and blend
+
       ctx.globalCompositeOperation = "lighter";
       points.forEach((p) => {
         const radius = Math.max(width, height) * 0.8;

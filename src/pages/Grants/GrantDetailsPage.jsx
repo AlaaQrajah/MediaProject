@@ -40,8 +40,6 @@ export default function GrantDetailsPage() {
     return (
         <PageWrapper>
             <SEO title={grant.title} description={grant.description} />
-
-            {/* Hero Section */}
             <div className="relative bg-gradient-to-b from-emerald-50 to-white pt-24 pb-12 overflow-hidden">
                 <SectionWrapper className="relative z-10">
                     <Link to={ROUTES.GRANTS} className="inline-flex items-center text-slate-500 hover:text-[#004733] mb-8 transition-colors">
@@ -79,7 +77,7 @@ export default function GrantDetailsPage() {
 
             <SectionWrapper className="py-12 -mt-10 relative z-20">
                 <div className="grid lg:grid-cols-3 gap-8 items-start">
-                    {/* Main Content */}
+
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -118,7 +116,6 @@ export default function GrantDetailsPage() {
                         )}
                     </motion.div>
 
-                    {/* Sidebar CTA */}
                     <motion.div
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
@@ -144,7 +141,7 @@ export default function GrantDetailsPage() {
                             <p className="text-slate-600 text-sm font-medium">
                                 شارك هذه الفرصة مع أصدقائك
                             </p>
-                            {/* Social Share Mock */}
+                    
                             <div className="flex justify-center gap-3 mt-4">
                                 {['نسخ الرابط', 'فيسبوك', 'واتساب'].map(platform => (
                                     <button

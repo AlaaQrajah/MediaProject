@@ -1,4 +1,3 @@
-// src/components/backgrounds/ParticlesBackground.tsx
 import React, { useEffect, useRef } from "react";
 
 type Props = {
@@ -107,7 +106,7 @@ const ParticlesBackground: React.FC<Props> = ({
         }
       });
 
-      // draw connections
+ 
       const maxDist = 130;
       for (let i = 0; i < particles.length; i++) {
         for (let j = i + 1; j < particles.length; j++) {
@@ -124,7 +123,7 @@ const ParticlesBackground: React.FC<Props> = ({
         }
       }
 
-      // draw particles
+        
       ctx.fillStyle = color;
       particles.forEach((p) => {
         ctx.beginPath();
@@ -161,7 +160,7 @@ const ParticlesBackground: React.FC<Props> = ({
   );
 };
 
-// helpers
+ 
 function hexToRgba(hex: string, alpha: number) {
   const parsed = hex.replace("#", "");
   const bigint = parseInt(parsed.length === 3

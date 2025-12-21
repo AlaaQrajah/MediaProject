@@ -21,11 +21,9 @@ import Button from "../../shared/components/ui/Button";
 import { ROUTES } from "../../shared/constants/routes";
 import { useAuth } from "../../contexts/AuthContext";
 
-// صورة التوضيح (تأكد من المسار)
-import loginIllustration from "../../assets/auth/login-illustration.png";
+ import loginIllustration from "../../assets/auth/login-illustration.png";
 
-// ================= Schema Validation =================
-const loginSchema = z.object({
+ const loginSchema = z.object({
   email: z
     .string()
     .min(1, { message: "البريد الإلكتروني مطلوب" })
@@ -41,7 +39,6 @@ export default function LoginPage() {
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
-  // إعداد النموذج
   const {
     register,
     handleSubmit,
@@ -54,26 +51,21 @@ export default function LoginPage() {
     },
   });
 
-  // معالجة الإرسال
   const onSubmit = async (data) => {
     setIsLoading(true);
-    // محاكاة طلب الشبكة
     setTimeout(() => {
-      // تسجيل الدخول باستخدام AuthContext
       login({ email: data.email });
       setIsLoading(false);
       toast.success("تم تسجيل الدخول بنجاح");
-      navigate(ROUTES.HOME); // توجيه للرئيسية بعد النجاح
-    }, 1500);
+      navigate(ROUTES.HOME); 
+    }, 1500); 
   };
 
   return (
     <PageWrapper>
       <SEO title="تسجيل الدخول" description="سجل الدخول إلى حسابك في بوابة الجامعات" />
 
-      {/* ================= Header Banner ================= */}
       <div className="relative bg-gradient-to-r from-[#4a0f18] via-[#6B1F2A] to-[#4a0f18] py-8 md:py-12 text-center text-white overflow-hidden">
-        {/* Animated background elements */}
         <div className="absolute top-0 left-0 w-64 h-64 bg-white/10 rounded-full blur-3xl animate-blob"></div>
         <div className="absolute bottom-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl animate-blob animation-delay-2000"></div>
 
@@ -90,14 +82,12 @@ export default function LoginPage() {
       </div>
 
       <div className="min-h-[calc(100vh-200px)] flex items-center justify-center py-12 px-4 bg-gradient-to-br from-slate-50 via-white to-emerald-50/30 relative overflow-hidden" dir="rtl">
-        {/* Animated background decorations */}
         <div className="absolute top-20 right-10 w-72 h-72 bg-emerald-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
         <div className="absolute top-40 left-10 w-72 h-72 bg-rose-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
         <div className="absolute -bottom-10 left-1/3 w-72 h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
 
         <div className="w-full max-w-6xl grid md:grid-cols-2 gap-12 items-center relative z-10">
 
-          {/* ================= Left Side: Illustration ================= */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
@@ -114,7 +104,6 @@ export default function LoginPage() {
                 className="max-w-md w-full object-contain drop-shadow-2xl"
               />
             </motion.div>
-            {/* Decorative icons */}
             <motion.div
               animate={{ rotate: 360 }}
               transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
@@ -122,9 +111,7 @@ export default function LoginPage() {
             >
               <MdSecurity className="text-6xl" />
             </motion.div>
-          </motion.div>
-
-          {/* ================= Right Side: Form ================= */}
+          </motion.div>         
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
@@ -150,7 +137,7 @@ export default function LoginPage() {
               </div>
 
               <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-                {/* Email Field */}
+              
                 <div className="space-y-2">
                   <label className="text-sm font-semibold text-gray-700 block flex items-center gap-2">
                     <MdEmail className="text-emerald-600" />
@@ -178,7 +165,7 @@ export default function LoginPage() {
                   </div>
                 </div>
 
-                {/* Password Field */}
+                
                 <div className="space-y-2">
                   <label className="text-sm font-semibold text-gray-700 block flex items-center gap-2">
                     <MdLock className="text-emerald-600" />
@@ -215,7 +202,7 @@ export default function LoginPage() {
                   </div>
                 </div>
 
-                {/* Forgot Password Link */}
+              
                 <div className="flex justify-end">
                   <Link
                     to={ROUTES.FORGOT_PASSWORD || "#"}
@@ -225,7 +212,7 @@ export default function LoginPage() {
                   </Link>
                 </div>
 
-                {/* Submit Button */}
+                
                 <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
                   <Button
                     type="submit"
@@ -250,7 +237,7 @@ export default function LoginPage() {
                   </Button>
                 </motion.div>
 
-                {/* Sign Up Prompt */}
+          
                 <div className="text-center text-sm text-gray-600">
                   ليس لديك حساب؟{" "}
                   <Link to={ROUTES.REGISTER || "#"} className="text-emerald-600 font-bold hover:text-emerald-700 hover:underline transition">
@@ -258,7 +245,7 @@ export default function LoginPage() {
                   </Link>
                 </div>
 
-                {/* Divider */}
+          
                 <div className="relative flex items-center justify-center my-6">
                   <div className="absolute inset-0 flex items-center">
                     <div className="w-full border-t border-gray-200"></div>
@@ -268,7 +255,7 @@ export default function LoginPage() {
                   </div>
                 </div>
 
-                {/* Social Login Buttons */}
+            
                 <div className="grid grid-cols-3 gap-4">
                   <motion.button
                     whileHover={{ scale: 1.05, y: -2 }}

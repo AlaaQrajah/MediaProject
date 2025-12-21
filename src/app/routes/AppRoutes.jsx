@@ -6,7 +6,7 @@ import LoadingPage from "../../shared/components/ui/LoadingPage";
 import ScrollToTop from "../../shared/components/ui/ScrollToTop";
 import ProtectedRoute from "../../shared/components/layout/ProtectedRoute";
 
-// Lazy Load Pages for Performance (Code Splitting)
+
 const HomePage = lazy(() => import("../../pages/Home/HomePage"));
 const UniversitiesPage = lazy(() => import("../../pages/Universities/UniversitiesPage"));
 const UniversityDetailsPage = lazy(() => import("../../pages/Universities/UniversityDetailsPage"));
@@ -20,7 +20,7 @@ const GrantsPage = lazy(() => import("../../pages/Grants/GrantsPage"));
 const GrantDetailsPage = lazy(() => import("../../pages/Grants/GrantDetailsPage"));
 const DevelopersPage = lazy(() => import("../../pages/Developers/DevelopersPage"));
 
-// Auth Pages
+
 const LoginPage = lazy(() => import("../../pages/Auth/LoginPage"));
 const RegisterPage = lazy(() => import("../../pages/Auth/RegisterPage"));
 const ConfirmCodePage = lazy(() => import("../../pages/Auth/ConfirmCodePage"));
@@ -33,7 +33,6 @@ const router = createBrowserRouter([
   {
     element: <RootLayout />,
     children: [
-      // ========== Protected Routes (تتطلب تسجيل دخول) ==========
       {
         path: ROUTES.HOME,
         element: (
@@ -155,7 +154,7 @@ const router = createBrowserRouter([
         ),
       },
 
-      // ========== Auth Routes (لا تتطلب تسجيل دخول) ==========
+      
       {
         path: ROUTES.LOGIN,
         element: (

@@ -6,17 +6,15 @@ import {
   MdChecklist,
   MdTravelExplore,
 } from "react-icons/md";
-
-// === الصور (عدّل المسارات حسب مشروعك) ===
-import joinLeftImg from "../../../assets/join/howto-1.jpg"; // صورة الطالب
-import joinRightImg from "../../../assets/join/howto-2.jpg"; // صورة السيدة
+ 
+import joinLeftImg from "../../../assets/join/howto-1.jpg"; 
+import joinRightImg from "../../../assets/join/howto-2.jpg";  
 import avatar1 from "../../../assets/join/avatar-1.png";
 import avatar2 from "../../../assets/join/avatar-2.png";
 import avatar3 from "../../../assets/join/avatar-3.png";
 import { ROUTES } from "../../../shared/constants/routes";
 
-// بيانات الخطوات
-const STEPS = [
+ const STEPS = [
   {
     id: 1,
     title: "قم بتسجيل الدخول أو إنشاء حساب",
@@ -65,13 +63,11 @@ export default function HowToJoinSection() {
       dir="rtl"
       className="bg-gradient-to-b from-white via-[#f5f8ff] to-white py-16 md:py-24 relative overflow-hidden"
     >
-      {/* Background decoration */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-blue-100 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
+       <div className="absolute top-0 right-0 w-96 h-96 bg-blue-100 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-purple-100 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
 
       <div className="mx-auto max-w-6xl px-4 relative z-10">
-        {/* ================= العنوان ================= */}
-        <div className="text-center mb-10 md:mb-14">
+         <div className="text-center mb-10 md:mb-14">
           <motion.h2
             initial={{ opacity: 0, y: -16 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -94,10 +90,8 @@ export default function HowToJoinSection() {
           </motion.p>
         </div>
 
-        {/* ============== المحتوى: خطوات يسار / صور يمين ============== */}
-        <div className="flex flex-col lg:flex-row gap-10 lg:gap-12 items-center">
-          {/* --------- عمود الخطوات (يسار بالصورة) --------- */}
-          <motion.div
+         <div className="flex flex-col lg:flex-row gap-10 lg:gap-12 items-center">
+           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.4 }}
@@ -113,8 +107,7 @@ export default function HowToJoinSection() {
                 overflow-hidden
               "
             >
-              {/* الأرقام الكبيرة في الخلفية */}
-              <span
+               <span
                 className="
                   pointer-events-none select-none
                   absolute -left-3 top-4
@@ -145,8 +138,7 @@ export default function HowToJoinSection() {
                 03
               </span>
 
-              {/* الكروت فوق الأرقام */}
-              <div className="relative space-y-4 md:space-y-5">
+               <div className="relative space-y-4 md:space-y-5">
                 {STEPS.map((step, index) => {
                   const Icon = step.icon;
                   return (
@@ -171,8 +163,7 @@ export default function HowToJoinSection() {
                         cursor-default
                       "
                     >
-                      {/* النص */}
-                      <div className="flex-1 text-right space-y-1">
+                       <div className="flex-1 text-right space-y-1">
                         <h3 className="text-base md:text-lg font-bold text-slate-900 group-hover:text-[#004733] transition-colors">
                           {step.title}
                         </h3>
@@ -181,8 +172,7 @@ export default function HowToJoinSection() {
                         </p>
                       </div>
 
-                      {/* دائرة الأيقونة */}
-                      <motion.div
+                       <motion.div
                         whileHover={{ scale: 1.1, rotate: 5 }}
                         className={`
                           flex items-center justify-center
@@ -201,8 +191,7 @@ export default function HowToJoinSection() {
                 })}
               </div>
 
-              {/* زر نصي صغير أسفل الكرت */}
-              <div className="relative mt-5 flex justify-end">
+               <div className="relative mt-5 flex justify-end">
                 <Link to={ROUTES.REGISTER}>
                   <motion.button
                     whileHover={{ scale: 1.05 }}
@@ -225,16 +214,14 @@ export default function HowToJoinSection() {
             </div>
           </motion.div>
 
-          {/* --------- عمود الصور (يمين بالصورة) --------- */}
-          <motion.div
+           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.4 }}
             transition={{ duration: 0.55 }}
             className="relative w-full lg:w-[50%]"
           >
-            {/* الإطار الأبيض حول الصور */}
-            <div
+             <div
               className="
                 relative rounded-[32px] bg-white
                 shadow-[0_26px_70px_rgba(15,23,42,0.22)]
@@ -244,8 +231,7 @@ export default function HowToJoinSection() {
               "
             >
               <div className="grid grid-cols-2 gap-3 md:gap-4 h-full">
-                {/* الصورة اليسار (طالب جالس) */}
-                <motion.div
+                 <motion.div
                   whileHover={{ scale: 1.02 }}
                   className="rounded-3xl overflow-hidden"
                 >
@@ -256,8 +242,7 @@ export default function HowToJoinSection() {
                   />
                 </motion.div>
 
-                {/* الصورة اليمين (سيدة) */}
-                <motion.div
+                 <motion.div
                   whileHover={{ scale: 1.02 }}
                   className="rounded-3xl overflow-hidden"
                 >
@@ -269,8 +254,7 @@ export default function HowToJoinSection() {
                 </motion.div>
               </div>
 
-              {/* الكرت العائم +10K طالب وطالبة */}
-              <motion.div
+               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.6 }}
@@ -288,8 +272,7 @@ export default function HowToJoinSection() {
                   cursor-default
                 "
               >
-                {/* صور البروفايل المتداخلة */}
-                <div className="flex -space-x-2">
+                 <div className="flex -space-x-2">
                   {[avatar1, avatar2, avatar3].map((src, idx) => (
                     <img
                       key={idx}

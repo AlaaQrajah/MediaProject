@@ -5,7 +5,7 @@ import { MdChevronLeft, MdChevronRight, MdFormatQuote } from "react-icons/md";
 import background from "../../../assets/decorations/background.png";
 import saplet from "../../../assets/decorations/saplet.png";
 
-// ================== البيانات ==================
+ 
 const TESTIMONIALS = [
   {
     id: 1,
@@ -43,20 +43,18 @@ export default function CommunityTestimonialsSection() {
       className="relative overflow-hidden py-16 md:py-24 bg-[#f8fafc]"
       dir="rtl"
     >
-      {/* الخلفية (خريطة العالم) */}
+ 
       <div className="absolute inset-0 pointer-events-none select-none">
         <img
           src={background}
           alt=""
           className="w-full h-full object-cover opacity-40"
         />
-        {/* تدرّج خفيف من الأسفل لتعزيز القراءة */}
-        <div className="absolute inset-0 bg-gradient-to-t from-white/90 via-white/60 to-transparent" />
+         <div className="absolute inset-0 bg-gradient-to-t from-white/90 via-white/60 to-transparent" />
       </div>
 
       <div className="relative mx-auto max-w-6xl px-4 space-y-12">
-        {/* ================== العنوان ================== */}
-        <div className="text-center space-y-4">
+         <div className="text-center space-y-4">
           <motion.h2
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -80,8 +78,7 @@ export default function CommunityTestimonialsSection() {
           />
         </div>
 
-        {/* ================== الكروت مع السلايدر ================== */}
-        <div className="relative">
+         <div className="relative">
           <AnimatePresence mode="wait">
             <motion.div
               key={currentPage}
@@ -111,8 +108,7 @@ export default function CommunityTestimonialsSection() {
                     transition-all duration-300
                   "
                 >
-                  {/* أيقونة الاقتباس أعلى الكرت */}
-                  <div className="absolute -top-6 right-10">
+                   <div className="absolute -top-6 right-10">
                     <motion.div
                       whileHover={{ rotate: 15, scale: 1.1 }}
                       className="relative"
@@ -124,13 +120,11 @@ export default function CommunityTestimonialsSection() {
                     </motion.div>
                   </div>
 
-                  {/* نص الشهادة */}
-                  <p className="text-sm md:text-[15px] leading-relaxed text-slate-700 mt-4 font-medium">
+                   <p className="text-sm md:text-[15px] leading-relaxed text-slate-700 mt-4 font-medium">
                     "{item.text}"
                   </p>
 
-                  {/* الاسم والصفة */}
-                  <div className="mt-6 pt-4 border-t border-slate-200/70 space-y-1">
+                   <div className="mt-6 pt-4 border-t border-slate-200/70 space-y-1">
                     <h3 className="text-base md:text-lg font-bold text-slate-900 group-hover:text-emerald-600 transition-colors">
                       {item.name}
                     </h3>
@@ -143,8 +137,7 @@ export default function CommunityTestimonialsSection() {
             </motion.div>
           </AnimatePresence>
 
-          {/* Navigation Controls */}
-          {pageCount > 1 && (
+           {pageCount > 1 && (
             <div className="flex items-center justify-center gap-4 mt-10">
               <button
                 onClick={handlePrev}
@@ -153,8 +146,7 @@ export default function CommunityTestimonialsSection() {
                 <MdChevronRight size={24} />
               </button>
 
-              {/* Pagination Dots */}
-              <div className="flex gap-2">
+               <div className="flex gap-2">
                 {Array.from({ length: pageCount }).map((_, i) => (
                   <button
                     key={i}

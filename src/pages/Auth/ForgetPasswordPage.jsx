@@ -13,7 +13,6 @@ import { ROUTES } from "../../shared/constants/routes";
 
 import forgetIllustration from "../../assets/auth/login-illustration.png";
 
-// ================= Schema =================
 const forgetSchema = z.object({
   email: z.string().email({ message: "يرجى إدخال بريد إلكتروني صحيح" }),
 });
@@ -32,11 +31,10 @@ export default function ForgetPasswordPage() {
 
   const onSubmit = async (data) => {
     setIsLoading(true);
-    // Simulate API
     setTimeout(() => {
       console.log("Forget Password Request:", data);
       setIsLoading(false);
-      // Navigate to Confirm Code Page
+  
       navigate(ROUTES.CONFIRM_CODE || "/auth/confirm-code", { state: { email: data.email } });
     }, 1500);
   };
@@ -45,7 +43,7 @@ export default function ForgetPasswordPage() {
     <PageWrapper>
       <SEO title="نسيت كلمة المرور" description="استعادة كلمة المرور الخاصة بحسابك" />
 
-      {/* Header Banner */}
+
       <div className="bg-[#4a0f18] py-8 md:py-12 text-center text-white">
         <h1 className="text-3xl md:text-4xl font-bold">نسيت كلمة المرور</h1>
       </div>
@@ -53,7 +51,7 @@ export default function ForgetPasswordPage() {
       <div className="min-h-[calc(100vh-200px)] flex items-center justify-center py-12 px-4 bg-white" dir="rtl">
         <div className="w-full max-w-6xl grid md:grid-cols-2 gap-12 items-center">
 
-          {/* Illustration */}
+
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
@@ -67,7 +65,7 @@ export default function ForgetPasswordPage() {
             />
           </motion.div>
 
-          {/* Form */}
+
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}

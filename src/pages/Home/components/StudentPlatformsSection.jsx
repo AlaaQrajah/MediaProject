@@ -2,15 +2,13 @@ import { motion } from "framer-motion";
 import { MdArrowBack } from "react-icons/md";
 import { Link } from "react-router-dom";
 
-// ديكورات
-import decoGlobe from "../../../assets/decorations/platforms-globe.svg";
+ import decoGlobe from "../../../assets/decorations/platforms-globe.svg";
 import decoStar from "../../../assets/decorations/deco-star.svg";
 
-// شعارات المنصات
-import uniStudentLogo from "../../../assets/platforms/uni-student.svg";
+ import uniStudentLogo from "../../../assets/platforms/uni-student.svg";
 import googleStudentLogo from "../../../assets/platforms/google-student.svg";
 
-// ================== بيانات المنصات ==================
+ 
 const PLATFORMS = [
   {
     id: 1,
@@ -19,8 +17,8 @@ const PLATFORMS = [
       "منصة تخدم طلبة الجامعات في سوريا من خلال نقل أخبارهم، وتسليط الضوء على فعالياتهم، ودعمهم وتمكينهم بما يعزز الوعي ويسهم في بناء التعليم.",
     logo: googleStudentLogo,
     cta: "فيسبوك",
-    link: "https://www.facebook.com/GoogleDSC", // Example link
-    bgColor: "bg-[#6B1F2A]", // Deep red/burgundy
+    link: "https://www.facebook.com/GoogleDSC",  
+    bgColor: "bg-[#6B1F2A]",  
   },
   {
     id: 2,
@@ -29,12 +27,12 @@ const PLATFORMS = [
       "وُجدت لخدمة طلاب الجامعات في سوريا من خلال نقل أخبارهم، وتسليط الضوء على فعالياتهم، ودعمهم وتمكينهم بما يعزز الوعي ويسهم في بناء التعليم.",
     logo: uniStudentLogo,
     cta: "فيسبوك",
-    link: "https://www.facebook.com/UniversityStudentPlatform", // Example link
+    link: "https://www.facebook.com/UniversityStudentPlatform", 
     bgColor: "bg-[#6B1F2A]",
   },
 ];
 
-// أنيميشن للكروت
+ 
 const cardVariants = {
   hidden: { opacity: 0, y: 24 },
   visible: (i) => ({
@@ -55,8 +53,7 @@ export default function StudentPlatformsSection() {
       className="relative bg-transparent py-16 md:py-24 overflow-hidden"
     >
       <div className="relative mx-auto max-w-6xl px-4">
-        {/* ================== الخطوط المتصلة في الخلفية ================== */}
-        <div className="absolute top-0 left-0 w-full h-full pointer-events-none opacity-20 -z-10">
+         <div className="absolute top-0 left-0 w-full h-full pointer-events-none opacity-20 -z-10">
           <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
             <circle cx="10%" cy="10%" r="2" fill="#004733" />
             <circle cx="90%" cy="20%" r="2" fill="#004733" />
@@ -66,17 +63,7 @@ export default function StudentPlatformsSection() {
           </svg>
         </div>
 
-        {/* ================== الزخارف ================== */}
-        {/* <motion.img
-          src={decoGlobe}
-          alt=""
-          aria-hidden="true"
-          className="pointer-events-none select-none absolute top-6 left-4 w-32 md:w-40 opacity-40 z-0"
-          animate={{ y: [0, -10, 0], rotate: [0, 6, 0] }}
-          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-        /> */}
-
-        {/* ================== العنوان ================== */}
+        
         <div className="text-center mb-16 relative z-10">
           <motion.h2
             initial={{ opacity: 0, y: -16 }}
@@ -89,8 +76,7 @@ export default function StudentPlatformsSection() {
           </motion.h2>
         </div>
 
-        {/* ================== الكروت ================== */}
-        <div className="grid gap-8 md:gap-10 md:grid-cols-2">
+         <div className="grid gap-8 md:gap-10 md:grid-cols-2">
           {PLATFORMS.map((platform, index) => (
             <motion.article
               key={platform.id}
@@ -103,8 +89,7 @@ export default function StudentPlatformsSection() {
             >
               <div className="px-8 py-10 md:px-12 md:py-14 flex flex-col justify-between h-full min-h-[350px]">
 
-                {/* العنوان والوصف */}
-                <div className="text-center space-y-4">
+                 <div className="text-center space-y-4">
                   <h3 className="text-xl md:text-2xl font-bold">
                     {platform.name}
                   </h3>
@@ -113,10 +98,8 @@ export default function StudentPlatformsSection() {
                   </p>
                 </div>
 
-                {/* الأسفل: زر + لوجو */}
-                <div className="mt-10 flex items-center justify-between gap-4">
-                  {/* زر فيسبوك */}
-                  <a href={platform.link} target="_blank" rel="noopener noreferrer">
+                 <div className="mt-10 flex items-center justify-between gap-4">
+                   <a href={platform.link} target="_blank" rel="noopener noreferrer">
                     <motion.button
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
@@ -137,11 +120,7 @@ export default function StudentPlatformsSection() {
                       <span className="font-bold text-sm">فيسبوك</span>
                     </motion.button>
                   </a>
-                  {/* <Button variant="outline" className="border-white text-white hover:bg-white/10 rounded-full px-6">
-                      {platform.cta}
-                  </Button> */}
-
-                  {/* اللوجو */}
+                   
                   <div className="w-16 h-16 md:w-20 md:h-20 bg-white/10 rounded-full flex items-center justify-center backdrop-blur-sm">
                     <img
                       src={platform.logo}

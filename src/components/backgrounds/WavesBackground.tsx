@@ -1,4 +1,4 @@
-// src/components/backgrounds/WavesBackground.tsx
+
 import React, { useEffect, useRef } from "react";
 
 type Props = {
@@ -42,7 +42,7 @@ const WavesBackground: React.FC<Props> = ({
       if (!interactive) return;
       const rect = canvas.getBoundingClientRect();
       const y = e.clientY - rect.top;
-      mouseRef.current = y / height; // from 0 to 1
+      mouseRef.current = y / height; 
     };
 
     const handleMouseLeave = () => {

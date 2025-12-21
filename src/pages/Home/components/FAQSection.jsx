@@ -57,22 +57,18 @@ export default function FAQSection() {
 
   return (
     <SectionWrapper bgColor="bg-[#f4f7fb]" className="py-16 md:py-20 relative overflow-hidden">
-      {/* Animated background decorations */}
-      <div className="absolute top-10 right-10 w-64 h-64 bg-rose-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
+       <div className="absolute top-10 right-10 w-64 h-64 bg-rose-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
       <div className="absolute top-20 left-10 w-64 h-64 bg-purple-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
       <div className="absolute -bottom-10 right-1/3 w-64 h-64 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
 
       <div className="space-y-10 relative z-10">
-        {/* العنوان */}
-        <SectionHeader
+         <SectionHeader
           title="الأسئلة الشائعة"
           subtitle="إجابات سريعة على أكثر الأسئلة تكرارًا حول استخدام المنصة وميزات الحساب."
         />
 
-        {/* المحتوى: الكرت الكبير + قائمة الأسئلة */}
-        <div className="grid gap-8 md:grid-cols-[minmax(0,1.25fr)_minmax(0,1fr)] items-start">
-          {/* الكرت الكبير (الإجابة) */}
-          <div className="relative">
+         <div className="grid gap-8 md:grid-cols-[minmax(0,1.25fr)_minmax(0,1fr)] items-start">
+           <div className="relative">
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeItem.id}
@@ -93,11 +89,9 @@ export default function FAQSection() {
                   transition-all duration-300
                 "
               >
-                {/* تدرّج خفيف داخل الكرت */}
-                <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(255,255,255,0.2),transparent_60%)] opacity-80" />
+                 <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(255,255,255,0.2),transparent_60%)] opacity-80" />
 
-                {/* Animated decorative icon in background */}
-                <motion.div
+                 <motion.div
                   initial={{ opacity: 0, scale: 0 }}
                   animate={{ opacity: 0.1, scale: 1 }}
                   transition={{ delay: 0.2, duration: 0.5 }}
@@ -125,10 +119,8 @@ export default function FAQSection() {
                   </p>
                 </div>
 
-                {/* الزخارف في أسفل الكرت */}
-                <div className="relative mt-6 flex items-center justify-between">
-                  {/* إشارة X في الأسفل اليسار (شكل جمالي فقط) */}
-                  <motion.span
+                 <div className="relative mt-6 flex items-center justify-between">
+                   <motion.span
                     animate={{ rotate: [0, 90, 0] }}
                     transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
                     className="text-xs tracking-widest text-rose-200/80"
@@ -136,8 +128,7 @@ export default function FAQSection() {
                     <MdClose className="inline-block text-lg align-middle" />{" "}
                   </motion.span>
 
-                  {/* رقم السؤال داخل دائرة */}
-                  <div className="flex items-center gap-2">
+                   <div className="flex items-center gap-2">
                     <span className="text-xs text-rose-100/80">
                       السؤال رقم
                     </span>
@@ -153,8 +144,7 @@ export default function FAQSection() {
             </AnimatePresence>
           </div>
 
-          {/* قائمة الأسئلة على اليمين */}
-          <div className="space-y-4">
+           <div className="space-y-4">
             {FAQ_ITEMS.map((item, index) => {
               const isActive = item.id === activeId;
               const ItemIcon = item.icon;
@@ -182,8 +172,7 @@ export default function FAQSection() {
                     }
                   `}
                 >
-                  {/* اليسار (أيقونة +) */}
-                  <motion.div
+                   <motion.div
                     animate={isActive ? { rotate: 45 } : { rotate: 0 }}
                     transition={{ duration: 0.3 }}
                     className={`
@@ -203,8 +192,7 @@ export default function FAQSection() {
                     )}
                   </motion.div>
 
-                  {/* نص السؤال */}
-                  <div className="flex-1 flex items-center gap-3">
+                   <div className="flex-1 flex items-center gap-3">
                     <ItemIcon className={`text-xl flex-shrink-0 transition-colors ${isActive ? "text-emerald-600" : "text-slate-400 group-hover:text-emerald-500"
                       }`} />
                     <p
@@ -218,8 +206,7 @@ export default function FAQSection() {
                     </p>
                   </div>
 
-                  {/* رقم السؤال في دائرة */}
-                  <div
+                   <div
                     className={`
                       flex h-10 w-10 items-center justify-center rounded-full
                       text-xs font-semibold

@@ -18,10 +18,9 @@ import SEO from "../../shared/components/layout/SEO";
 import Button from "../../shared/components/ui/Button";
 import { ROUTES } from "../../shared/constants/routes";
 
-// صورة التوضيح
+
 import forgotPasswordIllustration from "../../assets/auth/login-illustration.png";
 
-// ================= Schema Validation =================
 const forgotPasswordSchema = z.object({
     email: z
         .string()
@@ -34,7 +33,6 @@ export default function ForgotPasswordPage() {
     const [isLoading, setIsLoading] = useState(false);
     const [emailSent, setEmailSent] = useState(false);
 
-    // إعداد النموذج
     const {
         register,
         handleSubmit,
@@ -47,10 +45,10 @@ export default function ForgotPasswordPage() {
         },
     });
 
-    // معالجة الإرسال
+     
     const onSubmit = async (data) => {
         setIsLoading(true);
-        // محاكاة طلب الشبكة
+        
         setTimeout(() => {
             console.log("Password Reset Email Sent to:", data.email);
             setIsLoading(false);
@@ -66,9 +64,7 @@ export default function ForgotPasswordPage() {
                 description="استعد كلمة المرور الخاصة بك في بوابة الجامعات"
             />
 
-            {/* ================= Header Banner ================= */}
             <div className="relative bg-gradient-to-r from-[#4a0f18] via-[#6B1F2A] to-[#4a0f18] py-8 md:py-12 text-center text-white overflow-hidden">
-                {/* Animated background elements */}
                 <div className="absolute top-0 left-0 w-64 h-64 bg-white/10 rounded-full blur-3xl animate-blob"></div>
                 <div className="absolute bottom-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl animate-blob animation-delay-2000"></div>
 
@@ -85,13 +81,11 @@ export default function ForgotPasswordPage() {
             </div>
 
             <div className="min-h-[calc(100vh-200px)] flex items-center justify-center py-12 px-4 bg-gradient-to-br from-slate-50 via-white to-emerald-50/30 relative overflow-hidden" dir="rtl">
-                {/* Animated background decorations */}
                 <div className="absolute top-20 right-10 w-72 h-72 bg-emerald-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
                 <div className="absolute top-40 left-10 w-72 h-72 bg-rose-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
                 <div className="absolute -bottom-10 left-1/3 w-72 h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
 
                 <div className="w-full max-w-6xl grid md:grid-cols-2 gap-12 items-center relative z-10">
-                    {/* ================= Left Side: Illustration ================= */}
                     <motion.div
                         initial={{ opacity: 0, x: -50 }}
                         animate={{ opacity: 1, x: 0 }}
@@ -108,7 +102,6 @@ export default function ForgotPasswordPage() {
                                 className="max-w-md w-full object-contain drop-shadow-2xl"
                             />
                         </motion.div>
-                        {/* Decorative icons */}
                         <motion.div
                             animate={{ rotate: 360 }}
                             transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
@@ -118,7 +111,6 @@ export default function ForgotPasswordPage() {
                         </motion.div>
                     </motion.div>
 
-                    {/* ================= Right Side: Form ================= */}
                     <motion.div
                         initial={{ opacity: 0, x: 50 }}
                         animate={{ opacity: 1, x: 0 }}
@@ -148,7 +140,6 @@ export default function ForgotPasswordPage() {
                                     </div>
 
                                     <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-                                        {/* Email Field */}
                                         <div className="space-y-2">
                                             <label className="text-sm font-semibold text-gray-700 block flex items-center gap-2">
                                                 <MdEmail className="text-emerald-600" />
@@ -164,7 +155,7 @@ export default function ForgotPasswordPage() {
                                                             ? "border-red-500 focus:border-red-500"
                                                             : "border-gray-200 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20"
                                                         }
-                          `}
+                        `}
                                                     placeholder="example@domain.com"
                                                 />
                                                 {errors.email && (
@@ -179,7 +170,6 @@ export default function ForgotPasswordPage() {
                                             </div>
                                         </div>
 
-                                        {/* Submit Button */}
                                         <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
                                             <Button
                                                 type="submit"
@@ -204,7 +194,6 @@ export default function ForgotPasswordPage() {
                                             </Button>
                                         </motion.div>
 
-                                        {/* Back to Login Link */}
                                         <div className="text-center text-sm text-gray-600">
                                             <Link
                                                 to={ROUTES.LOGIN}
@@ -217,7 +206,6 @@ export default function ForgotPasswordPage() {
                                     </form>
                                 </>
                             ) : (
-                                // Success Message
                                 <motion.div
                                     initial={{ opacity: 0, scale: 0.9 }}
                                     animate={{ opacity: 1, scale: 1 }}

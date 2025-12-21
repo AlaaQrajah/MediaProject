@@ -18,9 +18,7 @@ import Button from "../../shared/components/ui/Button";
 
 
 
-// ... (imports remain)
-
-// Base Mock for extended details that might not be in the list
+ 
 const MOCK_EXTENDED_DETAILS = {
     cover: "https://images.unsplash.com/photo-1562774053-701939374585?w=1600&q=80", // Generic University Cover
     website: "https://www.example.edu.sy",
@@ -48,19 +46,17 @@ const MOCK_EXTENDED_DETAILS = {
 export default function UniversityDetailsPage() {
     const { id } = useParams();
 
-    // Find the basic data from our list
-    const basicInfo = UNIVERSITIES_DATA.find(u => u.id === parseInt(id));
+     const basicInfo = UNIVERSITIES_DATA.find(u => u.id === parseInt(id));
 
     if (!basicInfo) {
         return <NotFoundPage />;
     }
 
-    // Merge basic info with extended mock data
-    // In a real app, you would fetch all this from an API
+ 
     const uni = {
         ...MOCK_EXTENDED_DETAILS,
-        ...basicInfo, // Overwrite with actual name, city, etc.
-        logo: basicInfo.image || basicInfo.logo, // handle naming diff
+        ...basicInfo,   
+        logo: basicInfo.image || basicInfo.logo, 
         stats: {
             ...MOCK_EXTENDED_DETAILS.stats,
             students: basicInfo.students,
@@ -76,7 +72,7 @@ export default function UniversityDetailsPage() {
         <PageWrapper>
             <SEO title={uni.name} description={uni.description} />
 
-            {/* Hero Section */}
+       
             <div className="relative h-[400px]">
                 <img src={uni.cover} alt="Cover" className="w-full h-full object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#4a0f18] via-transparent to-transparent opacity-90"></div>
@@ -103,7 +99,7 @@ export default function UniversityDetailsPage() {
                                 </Button>
                             </div>
                         </div>
-                        {/* Logo float */}
+                         
                         <div className="w-32 h-32 md:w-40 md:h-40 bg-white rounded-full p-2 shadow-2xl shrink-0 flex items-center justify-center overflow-hidden">
                             <img
                                 src={uni.logo}
@@ -119,7 +115,7 @@ export default function UniversityDetailsPage() {
                 </div>
             </div>
 
-            {/* Stats Bar (Dark Red) */}
+            
             <div className="bg-[#4a0f18] text-white py-8">
                 <div className="max-w-6xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8 text-center" dir="rtl">
                     <StatItem icon={<FaGraduationCap size={28} className="text-[#c5a365]" />} value={uni.stats.students} label="طالب وطالبة" />
@@ -131,7 +127,7 @@ export default function UniversityDetailsPage() {
 
             <div id="details-section" className="max-w-7xl mx-auto px-4 py-16 space-y-20" dir="rtl">
 
-                {/* Administration Section */}
+                 
                 <section className="text-center">
                     <h2 className="text-3xl font-bold text-slate-800 mb-12 relative inline-block">
                         إدارة الجامعة
@@ -151,13 +147,13 @@ export default function UniversityDetailsPage() {
                     </div>
                 </section>
 
-                {/* Faculties Section */}
+                
                 <section className="text-center">
                     <h2 className="text-3xl font-bold text-slate-800 mb-12 relative inline-block">
                         الكليات الهندسية
                         <span className="absolute -bottom-3 left-0 right-0 h-1 bg-[#c5a365] rounded-full w-1/2 mx-auto"></span>
                     </h2>
-                    {/* Just a demo grid for faculties */}
+                     
                     <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
                         {uni.branches.map((branch, idx) => (
                             <div key={idx} className="flex items-center gap-4 bg-gray-50 p-4 rounded-xl border border-gray-100 hover:bg-emerald-50 hover:border-emerald-100 transition-colors cursor-pointer group">

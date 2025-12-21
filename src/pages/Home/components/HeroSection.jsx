@@ -6,20 +6,17 @@ import heroMain from "../../../assets/home/hero-students.png";
 import { ROUTES } from "../../../shared/constants/routes";
 import { useAuth } from "../../../contexts/AuthContext";
 
-// أنيميشن للصورة
-const imageVariants = {
+ const imageVariants = {
   hidden: { opacity: 0, x: -40 },
   visible: { opacity: 1, x: 0 },
 };
 
-// أنيميشن للنص
-const textVariants = {
+ const textVariants = {
   hidden: { opacity: 0, x: 40 },
   visible: { opacity: 1, x: 0 },
 };
 
-// أنيميشن خفيف لزر البحث
-const searchVariants = {
+ const searchVariants = {
   hidden: { opacity: 0, scale: 0.9 },
   visible: { opacity: 1, scale: 1 },
 };
@@ -49,8 +46,7 @@ export default function HeroSection() {
       <div className="mx-auto max-w-6xl px-4 py-10 md:py-16">
         <div className="grid md:grid-cols-2 gap-10 items-center">
 
-          {/* ---------- الصورة (مع أنيميشن) ---------- */}
-          <motion.div
+           <motion.div
             className="order-2 md:order-1 flex justify-center"
             variants={imageVariants}
             initial="hidden"
@@ -64,22 +60,19 @@ export default function HeroSection() {
             />
           </motion.div>
 
-          {/* ---------- النصوص (مع أنيميشن) ---------- */}
-          <motion.div
+           <motion.div
             className="order-1 md:order-2 space-y-5 md:space-y-6"
             variants={textVariants}
             initial="hidden"
             animate="visible"
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.15 }}
           >
-            {/* الشارة */}
-            <div className="inline-flex items-center rounded-full bg-emerald-50 px-4 py-1 text-xs font-medium text-emerald-900">
+             <div className="inline-flex items-center rounded-full bg-emerald-50 px-4 py-1 text-xs font-medium text-emerald-900">
               <span className="ml-1 text-gray-600">البوابة الجامعية الشاملة -</span>
               <span className="font-semibold">UniGate</span>
             </div>
 
-            {/* العنوان - مخصص للمستخدمين المسجلين */}
-            {isAuthenticated ? (
+             {isAuthenticated ? (
               <>
                 <h1 className="text-3xl md:text-4xl font-extrabold leading-relaxed tracking-tight text-slate-900">
                   مرحباً بعودتك،
@@ -104,16 +97,14 @@ export default function HeroSection() {
               </>
             )}
 
-            {/* ---------- البحث ---------- */}
-            <motion.div
+             <motion.div
               className="flex items-center gap-3 mt-4"
               variants={searchVariants}
               initial="hidden"
               animate="visible"
               transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
             >
-              {/* زر البحث */}
-              <motion.button
+               <motion.button
                 aria-label="ابحث عن جامعة"
                 onClick={handleSearch}
                 whileHover={{ scale: 1.06 }}
@@ -128,8 +119,7 @@ export default function HeroSection() {
                 <MdSearch className="text-xl" />
               </motion.button>
 
-              {/* حقل الإدخال */}
-              <input
+               <input
                 type="text"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}

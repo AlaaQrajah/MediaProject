@@ -16,7 +16,7 @@ import SEO from "../../shared/components/layout/SEO";
 import Button from "../../shared/components/ui/Button";
 import { ROUTES } from "../../shared/constants/routes";
 
-// Categories for Tabs
+ 
 const CATEGORIES = [
   { id: "all", label: "الكل" },
   { id: "engineering", label: "الهندسة" },
@@ -26,7 +26,7 @@ const CATEGORIES = [
   { id: "economics", label: "الاقتصاد" },
 ];
 
-// Mock Data
+ 
 const SPECIALTIES = [
   { id: 1, title: "هندسة البرمجيات", category: "engineering", level: "ماجستير", icon: <MdComputer />, color: "bg-blue-100 text-blue-600", image: "https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?w=800&q=80" },
   { id: 2, title: "الذكاء الصنعي", category: "engineering", level: "دكتوراه", icon: <FaUserGraduate />, color: "bg-purple-100 text-purple-600", image: "https://images.unsplash.com/photo-1555255707-c07966088b7b?w=800&q=80" },
@@ -50,13 +50,11 @@ export default function SpecialtiesPage() {
     <PageWrapper>
       <SEO title="الاختصاصات والدراسات العليا" description="تصفح كافة الاختصاصات المتاحة للدراسات العليا في الجامعات السورية" />
 
-      {/* Header Banner */}
+      
       <div className="relative mb-24">
-        {/* Background Wrapper */}
-        <div className="bg-[#4a0f18] py-16 text-center text-white relative overflow-hidden rounded-b-[3rem]">
+         <div className="bg-[#4a0f18] py-16 text-center text-white relative overflow-hidden rounded-b-[3rem]">
           <div className="absolute inset-0 bg-black/10"></div>
-          {/* Decorative Circles */}
-          <div className="absolute top-0 left-0 w-64 h-64 bg-white/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
+           <div className="absolute top-0 left-0 w-64 h-64 bg-white/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
           <div className="absolute bottom-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl translate-x-1/2 translate-y-1/2"></div>
 
           <div className="relative z-10 max-w-4xl mx-auto px-4" dir="rtl">
@@ -67,8 +65,7 @@ export default function SpecialtiesPage() {
           </div>
         </div>
 
-        {/* Search Box Float */}
-        <div className="absolute left-1/2 -translate-x-1/2 -bottom-8 w-full max-w-2xl px-4 z-20">
+         <div className="absolute left-1/2 -translate-x-1/2 -bottom-8 w-full max-w-2xl px-4 z-20">
           <div className="bg-white p-2 rounded-2xl shadow-xl flex items-center pr-4 border border-gray-100">
             <MdSearch className="text-3xl text-gray-400 ml-2 shrink-0" />
             <input
@@ -87,8 +84,7 @@ export default function SpecialtiesPage() {
 
       <section className="mx-auto max-w-7xl px-4 pb-20 pt-8" dir="rtl">
 
-        {/* Filters */}
-        <div className="flex justify-center flex-wrap gap-2 mb-12">
+         <div className="flex justify-center flex-wrap gap-2 mb-12">
           {CATEGORIES.map(cat => (
             <button
               key={cat.id}
@@ -103,8 +99,7 @@ export default function SpecialtiesPage() {
           ))}
         </div>
 
-        {/* Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           <AnimatePresence mode="popLayout">
             {filtered.map((item) => (
               <motion.div
@@ -146,8 +141,7 @@ export default function SpecialtiesPage() {
 
                   <div className="mt-auto pt-6 border-t border-gray-100 flex justify-between items-center group/footer">
                     <div className="flex -space-x-3 space-x-reverse px-2">
-                      {/* Mock Avatars using a reliable source or local assets if I could import, but using colors for now distinct */}
-                      {[1, 2, 3].map((i) => (
+                       {[1, 2, 3].map((i) => (
                         <div key={i} className="w-8 h-8 rounded-full border-2 border-white bg-gray-200 overflow-hidden">
                           <img src={`https://i.pravatar.cc/100?u=${item.id + i}`} alt="student" className="w-full h-full object-cover" />
                         </div>

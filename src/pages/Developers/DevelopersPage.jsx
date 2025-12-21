@@ -1,8 +1,6 @@
 import SEO from "../../shared/components/layout/SEO";
 import SectionWrapper from "../../shared/components/ui/SectionWrapper";
 import SectionHeader from "../../shared/components/ui/SectionHeader";
-
-// Importing images directly to ensure they work with Vite
 import DevAlaa from "../../assets/developers/dev-alaa.png";
 import DevAbdulrazzaq from "../../assets/developers/dev-abdulrazzaq.png";
 import DevMosab from "../../assets/developers/dev-mosab.png";

@@ -14,7 +14,6 @@ export const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
 
-    // Load user from localStorage on mount
     useEffect(() => {
         const storedUser = localStorage.getItem("unigate_user");
         if (storedUser) {
@@ -78,5 +77,9 @@ export const AuthProvider = ({ children }) => {
         updateUser,
     };
 
-    return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
+    return (
+        <AuthContext.Provider value={value} >
+            {children}
+        </AuthContext.Provider>
+            );
 };

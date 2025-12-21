@@ -15,8 +15,7 @@ import SEO from "../../shared/components/layout/SEO";
 import Button from "../../shared/components/ui/Button";
 import { ROUTES } from "../../shared/constants/routes";
 
-// Expanded Mock Data for Details
-const SPECIALTY_DETAILS = {
+ const SPECIALTY_DETAILS = {
     1: {
         id: 1,
         title: "هندسة البرمجيات",
@@ -43,8 +42,7 @@ const SPECIALTY_DETAILS = {
             { name: "د. ريم العلي", role: "مشرف مشاريع", image: "https://i.pravatar.cc/150?u=prof2" }
         ]
     },
-    // Default fallback for other IDs
-    default: {
+     default: {
         id: 99,
         title: "اختصاص عام",
         level: "ماجستير",
@@ -78,8 +76,7 @@ export default function SpecialtyDetailsPage() {
         <PageWrapper>
             <SEO title={specialty.title} description={specialty.description} />
 
-            {/* Hero Section */}
-            <div className="relative h-[60vh] min-h-[500px] overflow-hidden">
+             <div className="relative h-[60vh] min-h-[500px] overflow-hidden">
                 <img src={specialty.image} alt={specialty.title} className="w-full h-full object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#4a0f18] via-[#4a0f18]/80 to-transparent"></div>
 
@@ -113,11 +110,9 @@ export default function SpecialtyDetailsPage() {
             </div>
 
             <div className="max-w-6xl mx-auto px-4 py-16 grid lg:grid-cols-3 gap-12" dir="rtl">
-                {/* Main Content */}
-                <div className="lg:col-span-2 space-y-12">
+                 <div className="lg:col-span-2 space-y-12">
 
-                    {/* About */}
-                    <section className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+                     <section className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
                         <h2 className="text-2xl font-bold text-[#004733] mb-6 flex items-center gap-2">
                             <MdOutlineDescription size={28} />
                             عن الاختصاص
@@ -127,8 +122,7 @@ export default function SpecialtyDetailsPage() {
                         </p>
                     </section>
 
-                    {/* Outcomes */}
-                    <section>
+                     <section>
                         <h2 className="text-2xl font-bold text-slate-800 mb-6 flex items-center gap-2">
                             <FaGraduationCap className="text-[#c5a365]" size={24} />
                             مخرجات التعلم
@@ -143,8 +137,7 @@ export default function SpecialtyDetailsPage() {
                         </div>
                     </section>
 
-                    {/* Curriculum */}
-                    <section>
+                     <section>
                         <h2 className="text-2xl font-bold text-slate-800 mb-6 flex items-center gap-2">
                             <MdOutlineSubject className="text-[#c5a365]" size={28} />
                             المقررات الدراسية
@@ -170,11 +163,9 @@ export default function SpecialtyDetailsPage() {
 
                 </div>
 
-                {/* Sidebar */}
-                <div className="space-y-8">
+                 <div className="space-y-8">
 
-                    {/* Quick Stats Card */}
-                    <div className="bg-white p-6 rounded-2xl shadow-lg border-t-4 border-[#c5a365]">
+                     <div className="bg-white p-6 rounded-2xl shadow-lg border-t-4 border-[#c5a365]">
                         <h3 className="font-bold text-lg mb-6 border-b pb-2">معلومات سريعة</h3>
                         <ul className="space-y-4">
                             <li className="flex justify-between items-center">
@@ -197,8 +188,7 @@ export default function SpecialtyDetailsPage() {
                         </Link>
                     </div>
 
-                    {/* Professors */}
-                    <div>
+                     <div>
                         <h3 className="font-bold text-lg mb-4 text-slate-800">الهيئة التدريسية المشرفة</h3>
                         <div className="space-y-4">
                             {specialty.professors.map((prof, idx) => (

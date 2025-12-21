@@ -1,22 +1,14 @@
 import { motion } from "framer-motion";
-import {
-    MdLocationOn,
-    MdEmail,
-    MdPhone,
-    MdArrowBack,
-    MdSchool
-} from "react-icons/md";
+import { MdLocationOn, MdEmail, MdPhone, MdArrowBack, MdSchool } from "react-icons/md";
 import { FaLaptopCode, FaNetworkWired, FaBrain, FaRobot } from "react-icons/fa";
-
 import PageWrapper from "../../shared/components/layout/PageWrapper";
 import SEO from "../../shared/components/layout/SEO";
 import Button from "../../shared/components/ui/Button";
 
-// Mock College Data
 const COLLEGE_DATA = {
     name: "كلية الهندسة المعلوماتية",
     description: "تسعى كلية الهندسة المعلوماتية في جامعة حلب إلى تأهيل كوادر هندسية متميزة في مجالات المعلوماتية ونظم التشغيل والذكاء الصنعي.",
-    image: "https://www.alepuniv.edu.sy/images/sliders/1.jpg", // Placeholder
+    image: "https://www.alepuniv.edu.sy/images/sliders/1.jpg",  
     dean: {
         name: "د. أحمد حاج درويش",
         role: "عميد الكلية",
@@ -47,16 +39,10 @@ export default function CollegePage() {
     return (
         <PageWrapper>
             <SEO title={college.name} description={college.description} />
-
-            {/* Hero Section */}
             <div className="relative h-[300px] md:h-[400px]">
-                {/* Decorative BG pattern */}
                 <div className="absolute inset-0 bg-white opacity-10" style={{ backgroundImage: 'radial-gradient(#004733 1px, transparent 0)', backgroundSize: '10px 10px' }}></div>
-
                 <div className="absolute inset-0 flex items-center justify-center p-8 bg-gradient-to-r from-gray-50 to-white">
                     <div className="flex flex-col md:flex-row items-center gap-12 max-w-6xl mx-auto w-full" dir="rtl">
-
-                        {/* Text */}
                         <div className="flex-1 space-y-6 text-center md:text-right z-10">
                             <h1 className="text-4xl md:text-5xl font-extrabold text-[#004733] leading-tight mb-4">
                                 {college.name}
@@ -64,7 +50,6 @@ export default function CollegePage() {
                             <p className="text-gray-600 leading-relaxed text-lg max-w-2xl">
                                 {college.description}
                             </p>
-
                             <div className="bg-gray-100/50 p-6 rounded-2xl border-r-4 border-[#004733] mt-6 text-right">
                                 <h3 className="font-bold text-[#004733] mb-2 text-sm">رسالة الكلية</h3>
                                 <p className="text-sm text-gray-700 italic">" {college.dean.message} "</p>
@@ -73,8 +58,6 @@ export default function CollegePage() {
                                 </Button>
                             </div>
                         </div>
-
-                        {/* Image */}
                         <div className="flex-1 hidden md:block relative">
                             <div className="relative rounded-[2rem] overflow-hidden shadow-2xl skew-x-3 hover:skew-x-0 transition-transform duration-500 border-4 border-white">
                                 <img
@@ -83,27 +66,21 @@ export default function CollegePage() {
                                     className="w-full h-80 object-cover"
                                 />
                             </div>
-                            {/* Decorative dots */}
                             <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-dots-pattern opacity-20"></div>
                         </div>
                     </div>
                 </div>
             </div>
-
-            {/* Stats Section Banner */}
             <div className="bg-[#4a0f18] py-8 text-white relative overflow-hidden">
                 <div className="max-w-4xl mx-auto px-4 grid grid-cols-3 gap-8 text-center relative z-10" dir="rtl">
                     <StatBox value={college.stats.students} label="طالب وطالبة" />
                     <StatBox value={college.stats.staff} label="الهيئة التدريسية" />
                     <StatBox value={college.stats.departments} label="الأقسام" />
                 </div>
-                {/* Background elements */}
+                
                 <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
             </div>
-
             <div className="max-w-6xl mx-auto px-4 py-16 space-y-24" dir="rtl">
-
-                {/* Management Section */}
                 <section className="text-center">
                     <h2 className="text-3xl font-bold text-slate-800 mb-12">إدارة الكلية</h2>
                     <div className="flex flex-wrap justify-center gap-8">
@@ -119,7 +96,6 @@ export default function CollegePage() {
                     </div>
                 </section>
 
-                {/* Departments Grid */}
                 <section>
                     <div className="text-center mb-12">
                         <h2 className="text-3xl font-bold text-slate-800 mb-4">الأقسام</h2>

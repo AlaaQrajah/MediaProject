@@ -10,9 +10,9 @@ export function AppProviders({ children }) {
     <QueryClientProvider client={queryClient}>
       <AuthProvider>
         {children}
-        <ReactQueryDevtools initialIsOpen={false} />
-        <Toaster position="top-center" reverseOrder={false} />
-      </AuthProvider>
+                  <ReactQueryDevtools initialIsOpen={false} />
+                  <Toaster position="top-center" reverseOrder={false} />
+        </AuthProvider>
     </QueryClientProvider>
   );
 }

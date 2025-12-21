@@ -5,17 +5,7 @@ import * as z from "zod";
 import toast from "react-hot-toast";
 import { Link, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import {
-  MdVisibility,
-  MdVisibilityOff,
-  MdCheck,
-  MdPersonAdd,
-  MdEmail,
-  MdLock,
-  MdPhone,
-  MdPerson,
-  MdSecurity,
-} from "react-icons/md";
+import { MdVisibility, MdVisibilityOff,  MdCheck, MdPersonAdd, MdEmail, MdLock, MdPhone, MdPerson, MdSecurity,} from "react-icons/md";
 import { FaGoogle, FaApple, FaFacebookF } from "react-icons/fa";
 
 import PageWrapper from "../../shared/components/layout/PageWrapper";
@@ -23,12 +13,9 @@ import SEO from "../../shared/components/layout/SEO";
 import Button from "../../shared/components/ui/Button";
 import { ROUTES } from "../../shared/constants/routes";
 import { useAuth } from "../../contexts/AuthContext";
-
-// استخدام نفس الصورة مؤقتاً أو صورة جديدة إذا توفرت
 import registerIllustration from "../../assets/auth/login-illustration.png";
 
-// ================= Schema Validation =================
-const phoneRegex = /^(09|\+9639)[0-9]{8}$/; // Regex تقريبي لأرقام الموبايل السورية
+const phoneRegex = /^(09|\+9639)[0-9]{8}$/; 
 
 const registerSchema = z
   .object({
@@ -69,9 +56,7 @@ export default function RegisterPage() {
 
   const onSubmit = async (data) => {
     setIsLoading(true);
-    // محاكاة طلب الشبكة
     setTimeout(() => {
-      // تسجيل المستخدم باستخدام AuthContext
       registerUser({
         firstName: data.firstName,
         lastName: data.lastName,
@@ -80,7 +65,7 @@ export default function RegisterPage() {
       });
       setIsLoading(false);
       toast.success("تم إنشاء الحساب بنجاح!");
-      navigate(ROUTES.HOME); // توجيه للرئيسية بعد التسجيل
+      navigate(ROUTES.HOME);  
     }, 1500);
   };
 
@@ -88,9 +73,7 @@ export default function RegisterPage() {
     <PageWrapper>
       <SEO title="إنشاء حساب" description="انضم إلى بوابة الجامعات وابدأ رحلة استكشاف مستقبلك" />
 
-      {/* Header Banner */}
       <div className="relative bg-gradient-to-r from-[#4a0f18] via-[#6B1F2A] to-[#4a0f18] py-8 md:py-12 text-center text-white overflow-hidden">
-        {/* Animated background elements */}
         <div className="absolute top-0 left-0 w-64 h-64 bg-white/10 rounded-full blur-3xl animate-blob"></div>
         <div className="absolute bottom-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl animate-blob animation-delay-2000"></div>
 
@@ -107,14 +90,12 @@ export default function RegisterPage() {
       </div>
 
       <div className="min-h-[calc(100vh-200px)] flex items-center justify-center py-12 px-4 bg-gradient-to-br from-slate-50 via-white to-emerald-50/30 relative overflow-hidden" dir="rtl">
-        {/* Animated background decorations */}
         <div className="absolute top-20 right-10 w-72 h-72 bg-emerald-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
         <div className="absolute top-40 left-10 w-72 h-72 bg-rose-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
         <div className="absolute -bottom-10 left-1/3 w-72 h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
 
         <div className="w-full max-w-6xl grid md:grid-cols-2 gap-12 items-start relative z-10">
 
-          {/* Illustration */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
@@ -131,7 +112,6 @@ export default function RegisterPage() {
                 className="max-w-md w-full object-contain drop-shadow-2xl"
               />
             </motion.div>
-            {/* Decorative icons */}
             <motion.div
               animate={{ rotate: 360 }}
               transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
@@ -141,7 +121,6 @@ export default function RegisterPage() {
             </motion.div>
           </motion.div>
 
-          {/* Form */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
@@ -168,7 +147,6 @@ export default function RegisterPage() {
 
               <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
 
-                {/* الاسم الأول والأخير */}
                 <div className="grid grid-cols-2 gap-4">
                   <div className="space-y-2">
                     <label className="text-sm font-semibold text-gray-700 flex items-center gap-2">
@@ -214,7 +192,7 @@ export default function RegisterPage() {
                   </div>
                 </div>
 
-                {/* البريد الإلكتروني */}
+      
                 <div className="space-y-2">
                   <label className="text-sm font-semibold text-gray-700 flex items-center gap-2">
                     <MdEmail className="text-emerald-600" />
@@ -238,7 +216,7 @@ export default function RegisterPage() {
                   )}
                 </div>
 
-                {/* رقم الهاتف */}
+              
                 <div className="space-y-2">
                   <label className="text-sm font-semibold text-gray-700 flex items-center gap-2">
                     <MdPhone className="text-emerald-600" />
@@ -262,7 +240,7 @@ export default function RegisterPage() {
                   )}
                 </div>
 
-                {/* كلمة المرور */}
+            
                 <div className="space-y-2">
                   <label className="text-sm font-semibold text-gray-700 flex items-center gap-2">
                     <MdLock className="text-emerald-600" />
@@ -297,7 +275,7 @@ export default function RegisterPage() {
                   )}
                 </div>
 
-                {/* تأكيد كلمة المرور */}
+                
                 <div className="space-y-2">
                   <label className="text-sm font-semibold text-gray-700 flex items-center gap-2">
                     <MdLock className="text-emerald-600" />
@@ -332,7 +310,6 @@ export default function RegisterPage() {
                   )}
                 </div>
 
-                {/* الشروط */}
                 <div className="flex items-start gap-2 pt-2">
                   <div className="relative flex items-center">
                     <input
@@ -350,7 +327,6 @@ export default function RegisterPage() {
                   </label>
                 </div>
 
-                {/* زر التسجيل */}
                 <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
                   <Button
                     type="submit"
@@ -382,7 +358,6 @@ export default function RegisterPage() {
                   </Link>
                 </div>
 
-                {/* Social Login */}
                 <div className="relative flex items-center justify-center my-6">
                   <div className="absolute inset-0 flex items-center">
                     <div className="w-full border-t border-gray-200"></div>

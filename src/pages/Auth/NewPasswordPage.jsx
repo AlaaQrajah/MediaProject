@@ -42,7 +42,7 @@ export default function NewPasswordPage() {
     setTimeout(() => {
       console.log("Password Reset:", data);
       setIsLoading(false);
-      navigate(ROUTES.LOGIN); // Return to login
+      navigate(ROUTES.LOGIN);  
     }, 1500);
   };
 
@@ -50,7 +50,7 @@ export default function NewPasswordPage() {
     <PageWrapper>
       <SEO title="تعيين كلمة مرور" description="قم بتعيين كلمة مرور جديدة لحسابك" />
 
-      {/* Header Banner */}
+
       <div className="bg-[#4a0f18] py-8 md:py-12 text-center text-white">
         <h1 className="text-3xl md:text-4xl font-bold">تعيين كلمة مرور جديدة</h1>
       </div>
@@ -58,7 +58,7 @@ export default function NewPasswordPage() {
       <div className="min-h-[calc(100vh-200px)] flex items-center justify-center py-12 px-4 bg-white" dir="rtl">
         <div className="w-full max-w-6xl grid md:grid-cols-2 gap-12 items-center">
 
-          {/* Illustration */}
+    
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
@@ -72,7 +72,7 @@ export default function NewPasswordPage() {
             />
           </motion.div>
 
-          {/* Form */}
+  
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}

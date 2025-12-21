@@ -1,40 +1,39 @@
-// src/components/backgrounds/GeometricBackground.tsx
 import React, { useEffect, useRef } from "react";
 
 type Props = {
-  count?: number;
-  colors?: string[];
-  speed?: number;
-  size?: number;
-  interactive?: boolean;
-  className?: string;
+        count?: number;
+        colors?: string[];
+        speed?: number;
+        size?: number;
+        interactive?: boolean;
+        className?: string;
 };
 
 type ShapeType = "square" | "circle" | "triangle";
 
 type Shape = {
-  x: number;
-  y: number;
-  size: number;
-  rotation: number;
-  rotationSpeed: number;
-  color: string;
-  type: ShapeType;
+          x: number;
+          y: number;
+          size: number;
+          rotation: number;
+          rotationSpeed: number;
+          color: string;
+          type: ShapeType;
 };
 
 const GeometricBackground: React.FC<Props> = ({
-  count = 30,
-  colors = ["#6366f1", "#8b5cf6", "#ec4899"],
-  speed = 0.5,
-  size = 60,
-  interactive = true,
-  className = "",
-}) => {
-  const canvasRef = useRef<HTMLCanvasElement | null>(null);
-  const animationRef = useRef<number>(0);
-  const mouseRef = useRef<{ x: number | null; y: number | null }>({
-    x: null,
-    y: null,
+        count = 30,
+        colors = ["#6366f1", "#8b5cf6", "#ec4899"],
+        speed = 0.5,
+        size = 60,
+        interactive = true,
+        className = "",
+          }) => {
+        const canvasRef = useRef<HTMLCanvasElement | null>(null);
+        const animationRef = useRef<number>(0);
+        const mouseRef = useRef<{ x: number | null; y: number | null }>({
+          x: null,
+          y: null,
   });
 
   useEffect(() => {

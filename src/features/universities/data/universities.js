@@ -20,7 +20,7 @@ import manaraImg from "../../../assets/universities/manara.png";
 import aiuImg from "../../../assets/universities/aiu.png";
 
 export const UNIVERSITIES_DATA = [
-    // ====================== الجامعات الخاصة ======================
+ 
     {
         id: 1,
         name: "جامعة القلمون الخاصة",
@@ -82,7 +82,7 @@ export const UNIVERSITIES_DATA = [
         founded: "2005",
     },
 
-    // ====================== جامعات حكومية أخرى ======================
+ 
     {
         id: 7,
         name: "جامعة البعث",
@@ -154,8 +154,7 @@ export const UNIVERSITIES_DATA = [
         founded: "1971",
     },
 
-    // ====================== جامعات الشمال السوري ======================
-    {
+     {
         id: 14,
         name: "جامعة إدلب",
         type: "عامة",
