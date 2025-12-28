@@ -53,12 +53,15 @@ export default function LoginPage() {
 
   const onSubmit = async (data) => {
     setIsLoading(true);
-    setTimeout(() => {
-      login({ email: data.email });
-      setIsLoading(false);
+    try {
+      await login({ email: data.email, password: data.password });
       toast.success("تم تسجيل الدخول بنجاح");
-      navigate(ROUTES.HOME); 
-    }, 1500); 
+      navigate(ROUTES.HOME);
+    } catch {
+      toast.error("تعذر تسجيل الدخول");
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (

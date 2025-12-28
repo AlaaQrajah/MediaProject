@@ -12,7 +12,7 @@ import devAbdulrazzaq from "../../../assets/developers/dev-abdulrazzaq.png";
   {
     id: 1,
     name: "عبدالغني صحيحة",
-    role: "Flutter Developer",
+    role: "Back-end Developer",
     title: "مطوّر تطبيقات أندرويد",
     image: devAbdulgani,
     facebook: "https://facebook.com/",
