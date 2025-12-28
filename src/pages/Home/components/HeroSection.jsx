@@ -41,7 +41,7 @@ export default function HeroSection() {
   return (
     <section
       className="bg-transparent border-b border-[#f4d9a3]"
-      dir="rtl"
+      dir="ltr"
     >
       <div className="mx-auto max-w-6xl px-4 py-10 md:py-16">
         <div className="grid md:grid-cols-2 gap-10 items-center">
