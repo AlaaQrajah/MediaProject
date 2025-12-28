@@ -9,9 +9,7 @@ import { useAuth } from "../../../contexts/AuthContext";
 
 import { MdMenu, MdClose, MdPerson, MdLogout, MdNotifications } from "react-icons/md";
 
-// -------------------------------
-// Navigation Links
-// -------------------------------
+ 
 const NAV_ITEMS = [
   { label: "الرئيسية", to: ROUTES.HOME },
   { label: "الجامعات", to: ROUTES.UNIVERSITIES },
@@ -20,9 +18,7 @@ const NAV_ITEMS = [
   { label: "المطورون", to: ROUTES.DEVELOPERS },
 ];
 
-// -------------------------------
-// Navbar Component
-// -------------------------------
+ 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [showUserMenu, setShowUserMenu] = useState(false);
@@ -50,7 +46,7 @@ export default function Navbar() {
     >
       <div className="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between gap-4">
 
-        {/* ------------------ Logo ------------------ */}
+    
         <Link to={ROUTES.HOME} className="flex items-center gap-3 shrink-0">
           <img src={Logo} alt="UniGate Logo" className="h-10 w-auto" />
           <span className="text-base font-bold text-gray-900">
@@ -58,7 +54,7 @@ export default function Navbar() {
           </span>
         </Link>
 
-        {/* ------------------ Mobile Toggle ------------------ */}
+       
         <button
           onClick={toggleMenu}
           aria-label={open ? "إغلاق القائمة" : "فتح القائمة"}
@@ -76,7 +72,7 @@ export default function Navbar() {
           )}
         </button>
 
-        {/* ------------------ Desktop Nav ------------------ */}
+         
         <div className="hidden md:flex flex-1 items-center justify-between">
 
           {/* Links */}
@@ -102,12 +98,11 @@ export default function Navbar() {
               ))}
             </ul>
           </nav>
-
-          {/* Auth Section */}
+ 
           <div className="flex items-center gap-3 shrink-0">
             {isAuthenticated ? (
               <>
-                {/* Notifications */}
+                
                 <Link
                   to={ROUTES.NOTIFICATIONS}
                   className="relative p-2 rounded-full hover:bg-gray-100 transition"
@@ -116,7 +111,7 @@ export default function Navbar() {
                   <span className="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full"></span>
                 </Link>
 
-                {/* User Menu */}
+               
                 <div className="relative">
                   <button
                     onClick={() => setShowUserMenu(!showUserMenu)}
@@ -130,7 +125,7 @@ export default function Navbar() {
                     </span>
                   </button>
 
-                  {/* Dropdown Menu */}
+                  
                   <AnimatePresence>
                     {showUserMenu && (
                       <motion.div
@@ -182,7 +177,7 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* ------------------ Mobile Menu ------------------ */}
+     
       {open && (
         <div className="md:hidden border-t border-gray-100 bg-white">
           <nav className="mx-auto max-w-6xl px-4 py-3 space-y-3 text-sm font-medium text-gray-800">
@@ -205,7 +200,7 @@ export default function Navbar() {
               </NavLink>
             ))}
 
-            {/* Auth Section Mobile */}
+            
             {isAuthenticated ? (
               <div className="mt-3 pt-3 border-t border-gray-200 space-y-2">
                 <div className="flex items-center gap-2 px-3 py-2 bg-gray-50 rounded-lg">

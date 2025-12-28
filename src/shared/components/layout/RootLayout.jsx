@@ -15,7 +15,7 @@ export default function RootLayout() {
 
             <div className="flex-1 flex flex-col">
                 <AnimatePresence mode="wait">
-                    {/* Main Page Transition Handler */}
+                     
                     <PageTransition key={location.pathname}>
                         <Outlet />
                     </PageTransition>

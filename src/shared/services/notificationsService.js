@@ -1,7 +1,6 @@
 import { MdNotificationsActive, MdCheckCircle, MdInfo, MdWarning } from "react-icons/md";
 
-// Mock Data matching the screenshot tone (System notifications)
-let NOTIFICATIONS = [
+ let NOTIFICATIONS = [
     {
         id: 1,
         title: "تم تغيير كلمة المرور بنجاح",

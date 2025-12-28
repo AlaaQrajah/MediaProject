@@ -2,10 +2,10 @@ import { createContext, useContext, useState } from "react";
 import clsx from "clsx";
 import { motion } from "framer-motion";
 
-// 1. Create Context
+ 
 const DashboardContext = createContext();
 
-// 2. Main Wrapper
+ 
 export default function Dashboard({ children, defaultSidebarOpen = true }) {
     const [isSidebarOpen, setIsSidebarOpen] = useState(defaultSidebarOpen);
 
@@ -18,9 +18,7 @@ export default function Dashboard({ children, defaultSidebarOpen = true }) {
     );
 }
 
-// 3. Sub-Components
-Dashboard.Sidebar = function DashboardSidebar({ children }) {
-    const { isSidebarOpen } = useContext(DashboardContext);
+     const { isSidebarOpen } = useContext(DashboardContext);
 
     return (
         <motion.aside
@@ -33,7 +31,7 @@ Dashboard.Sidebar = function DashboardSidebar({ children }) {
             </div>
         </motion.aside>
     );
-};
+ ;
 
 Dashboard.Content = function DashboardContent({ children }) {
     return <main className="flex-1 bg-white p-8 overflow-y-auto">{children}</main>;

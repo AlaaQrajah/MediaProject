@@ -4,7 +4,7 @@ export default function SectionWrapper({
     children,
     className,
     bgColor = "bg-[#f9f5f1]",
-    containerWidth = "max-w-6xl" // Default width for most sections
+    containerWidth = "max-w-6xl"  
 }) {
     return (
         <section className={clsx(bgColor, "py-12 md:py-16", className)} dir="rtl">

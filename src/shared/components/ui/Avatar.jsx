@@ -23,7 +23,7 @@ export default function Avatar({ src, alt, size = "md", editable = false, onImag
 
     return (
         <div className={clsx("relative inline-block", className)}>
-            {/* Image Container */}
+           
             <div
                 className={clsx(
                     "rounded-full overflow-hidden border-4 border-white shadow-lg bg-gray-200",
@@ -37,7 +37,7 @@ export default function Avatar({ src, alt, size = "md", editable = false, onImag
                 />
             </div>
 
-            {/* Edit Overlay/Button */}
+           
             {editable && (
                 <label
                     className="absolute bottom-0 right-0 bg-[#c5a365] text-white p-2 rounded-full cursor-pointer hover:bg-[#b08e55] transition-colors shadow-md transform translate-x-1/4 translate-y-1/4"

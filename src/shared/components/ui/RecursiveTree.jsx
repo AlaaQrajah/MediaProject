@@ -2,8 +2,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { MdChevronLeft, MdChevronRight, MdDomain, MdSchool, MdClass } from "react-icons/md";
 import clsx from "clsx";
-
-// Icon mapping based on node type
+ 
 const getIcon = (type) => {
     switch (type) {
         case "university": return <MdDomain className="text-emerald-700" />;
@@ -27,23 +26,22 @@ const TreeNode = ({ node }) => {
                 )}
                 onClick={() => hasChildren && setIsOpen(!isOpen)}
             >
-                {/* Toggle Icon */}
+              
                 <span className={clsx("text-gray-400 transition-transform", !hasChildren && "opacity-0")}>
                     {isOpen ? <MdChevronRight className="rotate-90" /> : <MdChevronLeft />}
                 </span>
-
-                {/* Type Icon */}
+ 
                 <span className="text-xl bg-white p-1 rounded-full shadow-sm">
                     {getIcon(node.type)}
                 </span>
 
-                {/* Label */}
+               
                 <span className={clsx("font-medium", node.type === "university" ? "text-lg text-slate-800" : "text-base text-gray-700")}>
                     {node.name}
                 </span>
             </motion.div>
 
-            {/* Recursive Rendering with Animation */}
+             
             <AnimatePresence>
                 {isOpen && hasChildren && (
                     <motion.div

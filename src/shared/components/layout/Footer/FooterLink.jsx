@@ -1,4 +1,4 @@
-// src/components/Footer/FooterLink.jsx
+ 
 import { MdChevronLeft } from "react-icons/md";
 
 function FooterLink({ label }) {

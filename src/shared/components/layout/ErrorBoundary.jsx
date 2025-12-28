@@ -18,7 +18,7 @@ class ErrorBoundary extends React.Component {
 
     handleReset = () => {
         this.setState({ hasError: false, error: null });
-        window.location.href = "/"; // إعادة توجيه للرئيسية كحل جذري
+        window.location.href = "/"; 
     };
 
     render() {
@@ -50,8 +50,7 @@ class ErrorBoundary extends React.Component {
                                 العودة للصفحة الرئيسية
                             </button>
                         </div>
-
-                        {/* تفاصيل الخطأ للمطورين فقط (يمكن إخفاؤها في الإنتاج) */}
+ 
                         {process.env.NODE_ENV === 'development' && this.state.error && (
                             <div className="mt-8 text-left text-xs bg-gray-100 p-4 rounded overflow-auto max-h-32 text-red-800" dir="ltr">
                                 {this.state.error.toString()}

@@ -1,6 +1,6 @@
 import { SPECIALTIES_DATA } from "../../features/specialties/data/specialties";
 
-const DELAY_MS = 600; // Simulating network latency
+const DELAY_MS = 600;  
 
 export const specialtiesService = {
     getAll: async () => {

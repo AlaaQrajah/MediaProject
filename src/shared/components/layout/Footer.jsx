@@ -52,14 +52,14 @@ export default function Footer() {
       className="relative bg-gradient-to-b from-[#020814] via-[#020c0a] to-[#000000] text-slate-100 pt-16 pb-8 overflow-hidden"
       dir="rtl"
     >
-      {/* ===== زخارف خلفية محسنة ===== */}
+    
       <div className="pointer-events-none absolute top-0 left-1/4 h-96 w-96 rounded-full bg-emerald-900/20 blur-3xl animate-blob" />
       <div className="pointer-events-none absolute top-1/3 right-1/4 h-96 w-96 rounded-full bg-amber-900/15 blur-3xl animate-blob animation-delay-2000" />
       <div className="pointer-events-none absolute bottom-0 left-1/3 h-96 w-96 rounded-full bg-blue-900/15 blur-3xl animate-blob animation-delay-4000" />
       <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-emerald-400/40 to-transparent" />
 
       <div className="container mx-auto max-w-7xl px-4 relative z-10">
-        {/* =================== القسم الأوسط: تعريف UniGate =================== */}
+    
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -68,7 +68,7 @@ export default function Footer() {
           className="py-12"
         >
           <div className="flex flex-col items-center gap-8 lg:flex-row">
-            {/* الشعار */}
+        
             <Link to={ROUTES.HOME} className="flex items-center gap-4 group">
               <motion.div
                 whileHover={{ scale: 1.05, rotate: 5 }}
@@ -86,7 +86,7 @@ export default function Footer() {
               </div>
             </Link>
 
-            {/* النص التعريفي */}
+      
             <div className="flex-1 text-center lg:text-right">
               <p className="mx-auto max-w-3xl text-lg leading-relaxed text-slate-300 lg:mx-0">
                 تعمل منصة{" "}
@@ -99,10 +99,9 @@ export default function Footer() {
           </div>
         </motion.div>
 
-        {/* =================== القسم العلوي (الأعمدة) =================== */}
+ 
         <div className="grid grid-cols-1 gap-10 border-b border-white/10 pb-12 md:grid-cols-2 lg:grid-cols-4">
-          {/* ===== العمود الأول: معلومات الاتصال ===== */}
-          <motion.div
+                  <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -133,7 +132,7 @@ export default function Footer() {
             </div>
           </motion.div>
 
-          {/* ===== العمود الثاني: منصّتنا ===== */}
+         
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -159,7 +158,7 @@ export default function Footer() {
             </ul>
           </motion.div>
 
-          {/* ===== العمود الثالث: الخدمات (الحساب) ===== */}
+         
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -188,7 +187,7 @@ export default function Footer() {
             </ul>
           </motion.div>
 
-          {/* ===== العمود الرابع: الروابط السريعة ===== */}
+ 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -235,7 +234,7 @@ export default function Footer() {
           </motion.div>
         </div>
 
-        {/* =================== القسم السفلي: السوشال + الحقوق =================== */}
+ 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -244,7 +243,7 @@ export default function Footer() {
           className="border-t border-white/10 pt-6"
         >
           <div className="flex flex-col items-center gap-6 md:flex-row md:justify-between">
-            {/* أيقونات التواصل الاجتماعي */}
+       
             <div className="flex items-center gap-3">
               {socialLinks.map(({ Icon, url, color }, idx) => (
                 <motion.a
@@ -267,7 +266,7 @@ export default function Footer() {
               ))}
             </div>
 
-            {/* حقوق النشر */}
+            
             <div className="text-center text-sm text-slate-400 md:text-right">
               <p>
                 © {new Date().getFullYear()} UniGate. جميع الحقوق محفوظة.
@@ -277,7 +276,7 @@ export default function Footer() {
               </p>
             </div>
 
-            {/* روابط إضافية مختصرة */}
+        
             <div className="flex items-center gap-6 text-sm text-slate-400">
               <Link to={ROUTES.PRIVACY} className="transition-colors hover:text-emerald-400">
                 سياسة الخصوصية

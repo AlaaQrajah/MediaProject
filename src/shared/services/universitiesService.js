@@ -1,6 +1,6 @@
 import { UNIVERSITIES_DATA } from "../../features/universities/data/universities";
 
-const DELAY_MS = 800; // Simulating network latency
+const DELAY_MS = 800;  
 
 export const universitiesService = {
     getAll: async () => {
@@ -37,7 +37,7 @@ export const universitiesService = {
                     uni.city.toLowerCase().includes(lowerQuery)
                 );
                 resolve(filtered);
-            }, DELAY_MS / 2); // Search might be faster
+            }, DELAY_MS / 2); 
         });
     }
 };
