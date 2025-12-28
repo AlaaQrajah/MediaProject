@@ -128,7 +128,7 @@ export default function FAQSection() {
                     <MdClose className="inline-block text-lg align-middle" />{" "}
                   </motion.span>
 
-                   <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-2">
                     <span className="text-xs text-rose-100/80">
                       السؤال رقم
                     </span>

@@ -10,6 +10,7 @@ import EngineeringFacultiesSection from "./components/EngineeringFacultiesSectio
 import StudentPlatformsSectio from "./components/StudentPlatformsSection";
 import HowToJoinSection from "./components/HowToJoinSection";
 import CommunityTestimonialsSection from "./components/CommunityTestimonialsSection";
+import BenefitsStrip from "./components/BenefitsStrip";
 export default function HomePage() {
   return (
     <PageWrapper>
@@ -18,6 +19,7 @@ export default function HomePage() {
         description="منصة الجامعات السورية هي دليلك الشامل لاستكشاف الجامعات، التخصصات، والمنح الدراسية في سوريا."
       />
       <HeroSection />
+      <BenefitsStrip />
       <UniversitiesSection />
       <SpecialtiesPreviewSection />
       <AcademyBannerSection />
