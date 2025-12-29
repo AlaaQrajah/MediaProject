@@ -64,8 +64,6 @@ export default function ConfirmCodePage() {
               className="max-w-md w-full object-contain drop-shadow-xl"
             />
           </motion.div>
-
- 
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}

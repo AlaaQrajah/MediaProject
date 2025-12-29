@@ -75,7 +75,7 @@ export default function DevelopersSection() {
     <section
       id="developers"
       className="bg-gradient-to-b from-[#f9fafb] to-[#eef2ff] py-16 md:py-24 relative overflow-hidden"
-      dir="ltr"
+      dir="rtl"
     >
  
       <div className="absolute top-0 left-0 w-64 h-64 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 -translate-x-1/2 -translate-y-1/2 animate-blob"></div>

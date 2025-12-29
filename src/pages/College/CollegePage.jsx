@@ -95,13 +95,11 @@ export default function CollegePage() {
                         ))}
                     </div>
                 </section>
-
                 <section>
                     <div className="text-center mb-12">
                         <h2 className="text-3xl font-bold text-slate-800 mb-4">الأقسام</h2>
                         <div className="h-1 w-20 bg-[#004733] mx-auto rounded-full"></div>
                     </div>
-
                     <div className="grid md:grid-cols-2 gap-6">
                         {college.departments.map((dept) => (
                             <div key={dept.id} className="group bg-[#dcece9] hover:bg-[#cbe3de] p-6 rounded-xl flex items-center justify-between transition-colors border-2 border-transparent hover:border-[#004733]/10 cursor-pointer">
@@ -118,7 +116,6 @@ export default function CollegePage() {
                         ))}
                     </div>
                 </section>
-
             </div>
         </PageWrapper>
     );

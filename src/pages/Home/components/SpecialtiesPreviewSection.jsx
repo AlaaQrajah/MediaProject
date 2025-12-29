@@ -49,7 +49,7 @@ export default function SpecialtiesPreviewSection() {
 
   return (
     <SectionWrapper bgColor="bg-[#f8fafc]" className="relative overflow-hidden">
-      {/* الزخارف */}
+      
       <img
         src={decoCap}
         alt=""
@@ -64,7 +64,7 @@ export default function SpecialtiesPreviewSection() {
       />
 
       <div className="relative space-y-10 z-10">
-        {/* أعلى القسم: العنوان + زر كل الاختصاصات */}
+         
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="text-center md:text-right">
             <SectionHeader
@@ -75,7 +75,7 @@ export default function SpecialtiesPreviewSection() {
             />
           </div>
 
-          {/* Controls */}
+       
           <div className="flex items-center gap-3">
             <div className="flex items-center gap-2 bg-white p-1 rounded-full border border-slate-200 shadow-sm">
               <button
@@ -100,7 +100,7 @@ export default function SpecialtiesPreviewSection() {
           </div>
         </div>
 
-        {/* Slider Content */}
+        
         <div className="relative min-h-[400px]">
           <AnimatePresence mode="wait">
             <motion.div
@@ -148,7 +148,7 @@ export default function SpecialtiesPreviewSection() {
                         </p>
                       </div>
 
-                      {/* Stats */}
+                       
                       <div className="grid grid-cols-3 gap-2 pt-4 border-t border-slate-100">
                         <div className="text-center group-stat">
                           <div className="bg-emerald-50 w-8 h-8 rounded-full flex items-center justify-center mx-auto mb-2 group-hover:bg-[#004733] group-hover:text-white transition-colors duration-300">
@@ -184,7 +184,7 @@ export default function SpecialtiesPreviewSection() {
           </AnimatePresence>
         </div>
 
-        {/* Pagination Dots */}
+         
         <div className="flex justify-center gap-2 mt-2">
           {Array.from({ length: pageCount }).map((_, i) => (
             <button

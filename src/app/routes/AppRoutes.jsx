@@ -153,8 +153,6 @@ const router = createBrowserRouter([
           </Suspense>
         ),
       },
-
-      
       {
         path: ROUTES.LOGIN,
         element: (

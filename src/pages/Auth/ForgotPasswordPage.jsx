@@ -32,7 +32,6 @@ export default function ForgotPasswordPage() {
     const navigate = useNavigate();
     const [isLoading, setIsLoading] = useState(false);
     const [emailSent, setEmailSent] = useState(false);
-
     const {
         register,
         handleSubmit,
@@ -44,8 +43,6 @@ export default function ForgotPasswordPage() {
             email: "",
         },
     });
-
-     
     const onSubmit = async (data) => {
         setIsLoading(true);
         
@@ -56,18 +53,15 @@ export default function ForgotPasswordPage() {
             toast.success("تم إرسال رابط إعادة تعيين كلمة المرور إلى بريدك الإلكتروني");
         }, 1500);
     };
-
     return (
         <PageWrapper>
             <SEO
                 title="نسيت كلمة المرور"
                 description="استعد كلمة المرور الخاصة بك في بوابة الجامعات"
             />
-
             <div className="relative bg-gradient-to-r from-[#4a0f18] via-[#6B1F2A] to-[#4a0f18] py-8 md:py-12 text-center text-white overflow-hidden">
                 <div className="absolute top-0 left-0 w-64 h-64 bg-white/10 rounded-full blur-3xl animate-blob"></div>
                 <div className="absolute bottom-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl animate-blob animation-delay-2000"></div>
-
                 <div className="relative z-10 flex items-center justify-center gap-3">
                     <motion.div
                         initial={{ scale: 0, rotate: -180 }}
@@ -79,12 +73,10 @@ export default function ForgotPasswordPage() {
                     <h1 className="text-3xl md:text-4xl font-bold">نسيت كلمة المرور</h1>
                 </div>
             </div>
-
             <div className="min-h-[calc(100vh-200px)] flex items-center justify-center py-12 px-4 bg-gradient-to-br from-slate-50 via-white to-emerald-50/30 relative overflow-hidden" dir="rtl">
                 <div className="absolute top-20 right-10 w-72 h-72 bg-emerald-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
                 <div className="absolute top-40 left-10 w-72 h-72 bg-rose-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
                 <div className="absolute -bottom-10 left-1/3 w-72 h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
-
                 <div className="w-full max-w-6xl grid md:grid-cols-2 gap-12 items-center relative z-10">
                     <motion.div
                         initial={{ opacity: 0, x: -50 }}
@@ -110,7 +102,6 @@ export default function ForgotPasswordPage() {
                             <MdSecurity className="text-6xl" />
                         </motion.div>
                     </motion.div>
-
                     <motion.div
                         initial={{ opacity: 0, x: 50 }}
                         animate={{ opacity: 1, x: 0 }}
@@ -138,7 +129,6 @@ export default function ForgotPasswordPage() {
                                             </motion.div>
                                         </div>
                                     </div>
-
                                     <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                                         <div className="space-y-2">
                                             <label className="text-sm font-semibold text-gray-700 block flex items-center gap-2">
@@ -169,7 +159,6 @@ export default function ForgotPasswordPage() {
                                                 )}
                                             </div>
                                         </div>
-
                                         <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
                                             <Button
                                                 type="submit"
@@ -193,7 +182,6 @@ export default function ForgotPasswordPage() {
                                                 )}
                                             </Button>
                                         </motion.div>
-
                                         <div className="text-center text-sm text-gray-600">
                                             <Link
                                                 to={ROUTES.LOGIN}
@@ -219,7 +207,6 @@ export default function ForgotPasswordPage() {
                                     >
                                         <MdMarkEmailRead className="text-4xl text-white" />
                                     </motion.div>
-
                                     <div className="space-y-2">
                                         <h2 className="text-2xl font-bold text-slate-900">
                                             تم إرسال البريد الإلكتروني!
@@ -231,13 +218,11 @@ export default function ForgotPasswordPage() {
                                             {getValues("email")}
                                         </p>
                                     </div>
-
                                     <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-4 text-right">
                                         <p className="text-sm text-gray-700 leading-relaxed">
                                             يرجى التحقق من صندوق الوارد الخاص بك (وصندوق الرسائل غير المرغوب فيها) واتباع التعليمات لإعادة تعيين كلمة المرور.
                                         </p>
                                     </div>
-
                                     <div className="space-y-3">
                                         <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
                                             <Button
@@ -250,7 +235,6 @@ export default function ForgotPasswordPage() {
                                                 </span>
                                             </Button>
                                         </motion.div>
-
                                         <button
                                             onClick={() => setEmailSent(false)}
                                             className="w-full text-sm text-gray-600 hover:text-emerald-600 transition"

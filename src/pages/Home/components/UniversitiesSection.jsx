@@ -18,7 +18,7 @@ import SectionHeader from "../../../shared/components/ui/SectionHeader";
 import LoadingSpinner from "../../../shared/components/ui/LoadingSpinner";
 import Button from "../../../shared/components/ui/Button";
 
-// زخارف
+ 
 import decoArrows from "../../../assets/decorations/universities-arrows.svg";
 import decoArrowRight from "../../../assets/decorations/deco-arrow-right.svg";
 import decoStar from "../../../assets/decorations/deco-star.svg";

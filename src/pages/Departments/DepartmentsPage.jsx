@@ -12,11 +12,9 @@ export default function DepartmentsPage() {
         description="الهيكل التنظيمي للأقسام والكليات في الجامعات السورية."
       />
       <div className="bg-[#004733] py-16 text-center text-white relative overflow-hidden" dir="rtl">
- 
         <div className="absolute inset-0 opacity-10"
           style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '30px 30px' }}>
         </div>
-
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -29,7 +27,6 @@ export default function DepartmentsPage() {
           </p>
         </motion.div>
       </div>
-
       <section className="mx-auto max-w-6xl px-4 py-12" dir="rtl">
         <RecursiveTree data={DEPARTMENTS_TREE_DATA} />
       </section>

@@ -23,7 +23,6 @@ export default function DevelopersPage() {
                     subtitle="نخبة من المبدعين يعملون لتقديم أفضل تجربة لكم"
                     center
                 />
-
                 <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-16 max-w-5xl mx-auto">
                     {DEVELOPERS.map((dev, idx) => (
                         <div key={idx} className="flex flex-col items-center text-center group">

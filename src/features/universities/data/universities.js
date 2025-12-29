@@ -154,7 +154,7 @@ export const UNIVERSITIES_DATA = [
         founded: "1971",
     },
 
-     {
+    {
         id: 14,
         name: "جامعة إدلب",
         type: "عامة",

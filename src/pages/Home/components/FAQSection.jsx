@@ -57,7 +57,7 @@ export default function FAQSection() {
 
   return (
     <SectionWrapper bgColor="bg-[#f4f7fb]" className="py-16 md:py-20 relative overflow-hidden">
-       <div className="absolute top-10 right-10 w-64 h-64 bg-rose-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
+      <div className="absolute top-10 right-10 w-64 h-64 bg-rose-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
       <div className="absolute top-20 left-10 w-64 h-64 bg-purple-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
       <div className="absolute -bottom-10 right-1/3 w-64 h-64 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
 
@@ -119,8 +119,8 @@ export default function FAQSection() {
                   </p>
                 </div>
 
-                 <div className="relative mt-6 flex items-center justify-between">
-                   <motion.span
+                <div className="relative mt-6 flex items-center justify-between">
+                  <motion.span
                     animate={{ rotate: [0, 90, 0] }}
                     transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
                     className="text-xs tracking-widest text-rose-200/80"

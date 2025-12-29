@@ -39,7 +39,7 @@ const cardVariants = {
 
 export default function BenefitsStrip() {
   return (
-    <section className="bg-transparent" dir="ltr">
+    <section className="bg-transparent" dir="rtl">
       <div className="mx-auto max-w-6xl px-4 -mt-6 md:-mt-10">
         <motion.div
           initial={{ opacity: 0, y: 25 }}

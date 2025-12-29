@@ -13,8 +13,8 @@ import { ROUTES } from "../../shared/constants/routes";
 
 import newPassIllustration from "../../assets/auth/login-illustration.png";
 
-const resetSchema = z
-  .object({
+const resetSchema = 
+  z.object({
     password: z.string().min(6, { message: "كلمة المرور يجب أن تكون 6 محارف على الأقل" }),
     confirmPassword: z.string(),
   })

@@ -144,9 +144,7 @@ export default function RegisterPage() {
                   </motion.div>
                 </div>
               </div>
-
               <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-
                 <div className="grid grid-cols-2 gap-4">
                   <div className="space-y-2">
                     <label className="text-sm font-semibold text-gray-700 flex items-center gap-2">
@@ -191,8 +189,6 @@ export default function RegisterPage() {
                     )}
                   </div>
                 </div>
-
-      
                 <div className="space-y-2">
                   <label className="text-sm font-semibold text-gray-700 flex items-center gap-2">
                     <MdEmail className="text-emerald-600" />
@@ -214,9 +210,7 @@ export default function RegisterPage() {
                       {errors.email.message}
                     </motion.p>
                   )}
-                </div>
-
-              
+                </div>             
                 <div className="space-y-2">
                   <label className="text-sm font-semibold text-gray-700 flex items-center gap-2">
                     <MdPhone className="text-emerald-600" />
@@ -239,8 +233,6 @@ export default function RegisterPage() {
                     </motion.p>
                   )}
                 </div>
-
-            
                 <div className="space-y-2">
                   <label className="text-sm font-semibold text-gray-700 flex items-center gap-2">
                     <MdLock className="text-emerald-600" />
@@ -274,8 +266,6 @@ export default function RegisterPage() {
                     </motion.p>
                   )}
                 </div>
-
-                
                 <div className="space-y-2">
                   <label className="text-sm font-semibold text-gray-700 flex items-center gap-2">
                     <MdLock className="text-emerald-600" />

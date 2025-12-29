@@ -20,10 +20,11 @@ import SEO from "../../shared/components/layout/SEO";
 import Button from "../../shared/components/ui/Button";
 import { ROUTES } from "../../shared/constants/routes";
 import { useAuth } from "../../contexts/AuthContext";
+import loginIllustration from "../../assets/auth/login-illustration.png";
 
- import loginIllustration from "../../assets/auth/login-illustration.png";
 
- const loginSchema = z.object({
+
+const loginSchema = z.object({
   email: z
     .string()
     .min(1, { message: "البريد الإلكتروني مطلوب" })
@@ -32,13 +33,11 @@ import { useAuth } from "../../contexts/AuthContext";
     .string()
     .min(6, { message: "كلمة المرور يجب أن تكون 6 محارف على الأقل" }),
 });
-
 export default function LoginPage() {
   const navigate = useNavigate();
   const { login } = useAuth();
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-
   const {
     register,
     handleSubmit,
@@ -50,7 +49,6 @@ export default function LoginPage() {
       password: "",
     },
   });
-
   const onSubmit = async (data) => {
     setIsLoading(true);
     try {
@@ -63,15 +61,12 @@ export default function LoginPage() {
       setIsLoading(false);
     }
   };
-
   return (
     <PageWrapper>
       <SEO title="تسجيل الدخول" description="سجل الدخول إلى حسابك في بوابة الجامعات" />
-
       <div className="relative bg-gradient-to-r from-[#4a0f18] via-[#6B1F2A] to-[#4a0f18] py-8 md:py-12 text-center text-white overflow-hidden">
         <div className="absolute top-0 left-0 w-64 h-64 bg-white/10 rounded-full blur-3xl animate-blob"></div>
         <div className="absolute bottom-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl animate-blob animation-delay-2000"></div>
-
         <div className="relative z-10 flex items-center justify-center gap-3">
           <motion.div
             initial={{ scale: 0, rotate: -180 }}
@@ -83,14 +78,11 @@ export default function LoginPage() {
           <h1 className="text-3xl md:text-4xl font-bold">تسجيل الدخول</h1>
         </div>
       </div>
-
       <div className="min-h-[calc(100vh-200px)] flex items-center justify-center py-12 px-4 bg-gradient-to-br from-slate-50 via-white to-emerald-50/30 relative overflow-hidden" dir="rtl">
         <div className="absolute top-20 right-10 w-72 h-72 bg-emerald-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
         <div className="absolute top-40 left-10 w-72 h-72 bg-rose-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
         <div className="absolute -bottom-10 left-1/3 w-72 h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
-
         <div className="w-full max-w-6xl grid md:grid-cols-2 gap-12 items-center relative z-10">
-
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
@@ -138,7 +130,6 @@ export default function LoginPage() {
                   </motion.div>
                 </div>
               </div>
-
               <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
               
                 <div className="space-y-2">
@@ -167,8 +158,6 @@ export default function LoginPage() {
                     )}
                   </div>
                 </div>
-
-                
                 <div className="space-y-2">
                   <label className="text-sm font-semibold text-gray-700 block flex items-center gap-2">
                     <MdLock className="text-emerald-600" />
@@ -204,8 +193,6 @@ export default function LoginPage() {
                     )}
                   </div>
                 </div>
-
-              
                 <div className="flex justify-end">
                   <Link
                     to={ROUTES.FORGOT_PASSWORD || "#"}
@@ -214,8 +201,6 @@ export default function LoginPage() {
                     نسيت كلمة المرور؟
                   </Link>
                 </div>
-
-                
                 <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
                   <Button
                     type="submit"
@@ -239,16 +224,12 @@ export default function LoginPage() {
                     )}
                   </Button>
                 </motion.div>
-
-          
                 <div className="text-center text-sm text-gray-600">
                   ليس لديك حساب؟{" "}
                   <Link to={ROUTES.REGISTER || "#"} className="text-emerald-600 font-bold hover:text-emerald-700 hover:underline transition">
                     إنشاء حساب
                   </Link>
                 </div>
-
-          
                 <div className="relative flex items-center justify-center my-6">
                   <div className="absolute inset-0 flex items-center">
                     <div className="w-full border-t border-gray-200"></div>
@@ -257,8 +238,6 @@ export default function LoginPage() {
                     تسجيل دخول باستخدام
                   </div>
                 </div>
-
-            
                 <div className="grid grid-cols-3 gap-4">
                   <motion.button
                     whileHover={{ scale: 1.05, y: -2 }}

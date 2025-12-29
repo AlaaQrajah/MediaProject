@@ -46,7 +46,6 @@ export default function GrantDetailsPage() {
                         <MdArrowBack className="ml-2" />
                         العودة للمنح
                     </Link>
-
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -56,11 +55,9 @@ export default function GrantDetailsPage() {
                             <Badge variant="success" className="text-sm px-3 py-1">نشطة</Badge>
                             <Badge variant="outline" className="border-[#004733]/30 text-[#004733] text-sm px-3 py-1">منحة مميزة</Badge>
                         </div>
-
                         <h1 className="text-3xl md:text-5xl font-bold text-[#004733] mb-6 leading-tight max-w-4xl">
                             {grant.title}
                         </h1>
-
                         <div className="flex flex-wrap items-center gap-6 text-slate-700">
                             <span className="flex items-center gap-2 bg-white px-4 py-2 rounded-lg border border-slate-100 shadow-sm">
                                 <MdSchool className="text-[#c5a365] text-xl" />
@@ -74,10 +71,8 @@ export default function GrantDetailsPage() {
                     </motion.div>
                 </SectionWrapper>
             </div>
-
             <SectionWrapper className="py-12 -mt-10 relative z-20">
                 <div className="grid lg:grid-cols-3 gap-8 items-start">
-
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}

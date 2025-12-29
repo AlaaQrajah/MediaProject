@@ -120,7 +120,7 @@ export default function StudentPlatformsSection() {
                       <span className="font-bold text-sm">فيسبوك</span>
                     </motion.button>
                   </a>
-                   
+                  
                   <div className="w-16 h-16 md:w-20 md:h-20 bg-white/10 rounded-full flex items-center justify-center backdrop-blur-sm">
                     <img
                       src={platform.logo}
