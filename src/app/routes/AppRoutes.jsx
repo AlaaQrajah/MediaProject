@@ -182,6 +182,7 @@ const router = createBrowserRouter([
         element: (
           <Suspense fallback={<LoadingPage />}>
             <ForgotPasswordPage />
+             
           </Suspense>
         ),
       },
